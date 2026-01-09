@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preload" href="assets/css/init.css" as="style">
+    <link rel="preload" href="assets/css/style.css" as="style">
+
+    <link rel="stylesheet" href="assets/css/init.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar" aria-label="Əsas naviqasiya">
+            <div class="container">
+                <a href="/" class="navbar__logo" aria-label="Ana səhifə">
+                    <img src="assets/images/logo.png" alt="Enerji Servis Logo">
+                </a>
+
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="navbarContent"
+                    aria-label="Menyunu aç/bağla">
+                    <span class="menu-toggle__box">
+                        <span class="menu-toggle__inner"></span>
+                    </span>
+                </button>
+
+                <div class="nav-collapse" id="navbarContent" inert>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link">Ana Səhifə</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a type="button" class="nav-link dropdown-toggle" aria-expanded="false"
+                                aria-haspopup="menu">
+                                Məhsullar
+                                <svg class="dropdown-icon" viewBox="0 0 20 20" width="12" height="12"
+                                    aria-hidden="true">
+                                    <path fill="currentColor" d="M5 7l5 5 5-5z"></path>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a></li>
+                                <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a href="#" class="nav-link">Xidmətlər</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero__bg-image">
+                <img src="assets/images/hero.webp" alt="">
+            </div>
+            <div class="container">
+                <div class="hero__wrapper">
+                    <div class="hero__video-wrapper flip-left">
+                        <video autoplay loop muted playsinline poster="assets/images/video_bg.png" class="hero__video">
+                            <source src="assets/videos/video_bg.mp4" type="video/mp4">
+                            Sizin brauzeriniz video teqini dəstəkləmir.
+                        </video>
+                    </div>
+
+                    <div class="hero__content fade-up">
+                        <h1 class="hero__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, hic.
+                        </h1>
+                        <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, amet hic
+                            voluptatum accusamus cupiditate aliquam aut sed nulla a exercitationem quia obcaecati.
+                            Quidem enim provident neque porro quos nulla? Perferendis.</p>
+                        <div class="hero__actions">
+                            <a href="#" class="hero__details-button">İstehsal sahəmiz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init();
+        })
+    </script>
+</body>
+
+</html>

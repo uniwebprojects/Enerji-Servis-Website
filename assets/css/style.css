@@ -1,0 +1,339 @@
+:root {
+    --navbar-height: 150px;
+    --navbar-height-sm: 100px;
+}
+
+body {
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "GRAD" 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--uw-body-bg);
+    /* border-bottom: 4px solid rgb(1, 153, 202); */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: var(--navbar-height);
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    width: calc(var(--navbar-height) - 10px);
+    height: calc(var(--navbar-height) - 10px);
+}
+
+.navbar__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--uw-body-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--uw-primary);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: var(--uw-body-bg);
+    border: 1px solid var(--uw-border-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    color: var(--uw-body-color);
+    transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(var(--uw-link-color-rgb), 0.1);
+    color: var(--uw-primary);
+}
+
+.menu-toggle {
+    display: none;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+}
+
+.dropdown-icon {
+    transition: transform 0.3s ease;
+}
+
+.dropdown.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 991.98px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-collapse {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--uw-body-bg);
+        padding: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+    }
+
+    .nav-collapse.open {
+        transform: translateX(0);
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding-left: 1.5rem;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+}
+
+.hero__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    column-gap: 3rem;
+    /* overflow: hidden; */
+    padding: 2rem 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero__bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__video-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 600px;
+    min-width: 600px;
+    height: calc(90vh - var(--navbar-height));
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.hero__video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.45) 30%, rgba(192, 24, 49, 0.8));
+}
+
+.hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+}
+
+.hero__title {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.hero__text {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero__details-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 2px solid #fff;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    opacity: 0.8;
+}
+
+.hero__details-button:hover {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+
+
+@keyframes flipLeft {
+    from {
+        opacity: 0;
+        transform: perspective(2500px) rotateY(-100deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(2500px) rotateY(0);
+    }
+}
+
+.flip-left {
+    opacity: 0;
+    backface-visibility: hidden;
+
+    animation-name: flipLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: perspective(2500px) rotateY(-100deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(2500px) rotateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    backface-visibility: hidden;
+
+    animation-name: flipLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+}
