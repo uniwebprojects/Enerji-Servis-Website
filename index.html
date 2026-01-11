@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -27,20 +27,20 @@
     <header class="header">
         <nav class="navbar" aria-label="Əsas naviqasiya">
             <div class="container">
-                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="navbarContent"
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="navbarCollapse"
                     aria-label="Menyunu aç/bağla">
                     <span class="menu-toggle__box">
                         <span class="menu-toggle__inner"></span>
                     </span>
                 </button>
 
-                <div class="nav__collapse" id="navbarContent" inert>
+                <div class="nav__collapse" id="navbarCollapse" inert>
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="nav-link">Ana Səhifə</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link active">Ana Səhifə</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Haqqımızda</a></li>
 
                         <li class="nav-item dropdown">
-                            <a role="button" href="#" class="nav-link dropdown-toggle" aria-expanded="false"
+                            <button type="button" class="nav-link dropdown-toggle" aria-expanded="false"
                                 aria-haspopup="menu">
                                 Məhsullar
                                 <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
@@ -48,16 +48,19 @@
                                     <path fill="currentColor"
                                         d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
                                 </svg>
-                            </a>
+                            </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a></li>
-                                <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a></li>
+                                <div class="dropdown-menu__wrapper">
+                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a></li>
+                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a></li>
+                                </div>
                             </ul>
                         </li>
 
                         <li class="nav-item"><a href="#" class="nav-link">Xidmətlər</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Əlaqə</a></li>
                     </ul>
+                    <div class="nav-line"></div>
                 </div>
 
                 <a href="/" class="navbar__logo" aria-label="Ana səhifə">
@@ -83,33 +86,39 @@
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                            aria-label="Facebook keçid">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
-                                aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd"
-                                    d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
-                            aria-label="TikTok keçid">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
-                                aria-hidden="true">
-                                <path fill="currentColor"
-                                    d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48" />
-                            </svg>
-                        </a>
                     </div>
+
                     <div class="nav__actions-call">
                         <a href="tel:+994501234567" aria-label="Zəng et">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
                                 aria-hidden="true">
                                 <path fill="currentColor"
-                                    d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3" />
+                                    d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999" />
+                                <path fill="currentColor"
+                                    d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5zm3.422 5.443a1 1 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66c-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a1 1 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391z" />
                             </svg>
                             <span>+994 50 123 45 67</span>
                         </a>
+                    </div>
+
+                    <div class="top-changelang dropdown">
+                        <button type="button" class="lang-toggle dropdown-toggle" aria-expanded="false"
+                            aria-haspopup="listbox">
+                            <img src="assets/images/icons/az.png" alt="AZ" class="lang-flag">
+                            <span>AZ</span>
+                            <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <path fill="currentColor"
+                                    d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu lang-menu">
+                            <div class="dropdown-menu__wrapper">
+                                <li><a href="?lang=en" class="dropdown-item"><img src="assets/images/icons/en.png"
+                                            alt="EN" class="lang-flag"> EN</a></li>
+                                <li><a href="?lang=ru" class="dropdown-item"><img src="assets/images/icons/ru.png"
+                                            alt="RU" class="lang-flag"> RU</a></li>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -158,6 +167,39 @@
                             </span>
                             <span class="hero__details-button-text">İstehsal sahəmiz</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-main">
+            <div class="container">
+                <div class="products-main__heading">
+                    <span class="products-main__span">Yerli istehsalat</span>
+                    <h2 class="products-main__title">İstehsal etdiyimiz məhsullar</h2>
+                    <p class="products-main__desc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            width='1em' height='1em' aria-hidden="true">
+                            <g>
+                                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                    <path
+                                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-10 8a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
+                                    <path
+                                        d="M16.696 9.282a1 1 0 0 1 .022 1.414L12.16 15.4a1.4 1.4 0 0 1-2.01 0l-1.867-1.926a1 1 0 0 1 1.436-1.392l1.436 1.481l4.128-4.259a1 1 0 0 1 1.414-.022Z" />
+                                </g>
+                            </g>
+                        </svg> Şirkətimiz qaz avadanlıqlarının (sayğaclar,tənzimləyicilər,alarm
+                        cihazları,flanslar,detektorlar və s) istehsalını, satışını və servisini həyata keçirir.</p>
+                </div>
+                <div class="products-main__items">
+                    <div class="products-main__item">
+                        <div class="products-main__image-wrapper">
+                            <img src="assets/img/product-1.jpg" alt="Qaz sayğacı" class="products-main__img">
+                        </div>
+                        <div class="products-main__info">
+                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
+                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
+                            <a href="#" class="products-main__item-link">Daha ətraflı</a>
+                        </div>
                     </div>
                 </div>
             </div>
