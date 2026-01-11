@@ -14,8 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -28,10 +27,6 @@
     <header class="header">
         <nav class="navbar" aria-label="Əsas naviqasiya">
             <div class="container">
-                <a href="/" class="navbar__logo" aria-label="Ana səhifə">
-                    <img src="assets/images/logo.png" alt="Enerji Servis Logo">
-                </a>
-
                 <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="navbarContent"
                     aria-label="Menyunu aç/bağla">
                     <span class="menu-toggle__box">
@@ -39,17 +34,19 @@
                     </span>
                 </button>
 
-                <div class="nav-collapse" id="navbarContent" inert>
+                <div class="nav__collapse" id="navbarContent" inert>
                     <ul class="navbar-nav">
                         <li class="nav-item"><a href="#" class="nav-link">Ana Səhifə</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Haqqımızda</a></li>
 
                         <li class="nav-item dropdown">
-                            <a type="button" class="nav-link dropdown-toggle" aria-expanded="false"
+                            <a role="button" href="#" class="nav-link dropdown-toggle" aria-expanded="false"
                                 aria-haspopup="menu">
                                 Məhsullar
-                                <svg class="dropdown-icon" viewBox="0 0 20 20" width="12" height="12"
-                                    aria-hidden="true">
-                                    <path fill="currentColor" d="M5 7l5 5 5-5z"></path>
+                                <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                    width='1em' height='1em' aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
                                 </svg>
                             </a>
                             <ul class="dropdown-menu" role="menu">
@@ -59,7 +56,61 @@
                         </li>
 
                         <li class="nav-item"><a href="#" class="nav-link">Xidmətlər</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Əlaqə</a></li>
                     </ul>
+                </div>
+
+                <a href="/" class="navbar__logo" aria-label="Ana səhifə">
+                    <img src="assets/images/logo.png" alt="Enerji Servis Logo">
+                </a>
+
+                <div class="nav__actions">
+                    <div class="nav__actions-social-media">
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp keçid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                aria-hidden="true">
+                                <path fill="currentColor"
+                                    d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram keçid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                aria-hidden="true">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m-5 3a5 5 0 1 1 10 0a5 5 0 0 1-10 0"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook keçid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                aria-hidden="true">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok keçid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                aria-hidden="true">
+                                <path fill="currentColor"
+                                    d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="nav__actions-call">
+                        <a href="tel:+994501234567" aria-label="Zəng et">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                aria-hidden="true">
+                                <path fill="currentColor"
+                                    d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3" />
+                            </svg>
+                            <span>+994 50 123 45 67</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -70,24 +121,43 @@
             <div class="hero__bg-image">
                 <img src="assets/images/hero.webp" alt="">
             </div>
-            <div class="container">
-                <div class="hero__wrapper">
-                    <div class="hero__video-wrapper flip-left">
-                        <video autoplay loop muted playsinline poster="assets/images/video_bg.png" class="hero__video">
-                            <source src="assets/videos/video_bg.mp4" type="video/mp4">
-                            Sizin brauzeriniz video teqini dəstəkləmir.
-                        </video>
-                    </div>
+            <div class="hero__wrapper">
+                <div class="hero__video-wrapper">
+                    <video class="video-blur" autoplay loop muted playsinline>
+                        <!-- <source src="assets/videos/video_bg.mp4" type="video/mp4"> -->
+                    </video>
 
-                    <div class="hero__content fade-up">
-                        <h1 class="hero__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, hic.
-                        </h1>
-                        <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, amet hic
-                            voluptatum accusamus cupiditate aliquam aut sed nulla a exercitationem quia obcaecati.
-                            Quidem enim provident neque porro quos nulla? Perferendis.</p>
-                        <div class="hero__actions">
-                            <a href="#" class="hero__details-button">İstehsal sahəmiz</a>
-                        </div>
+                    <video autoplay loop muted playsinline poster="assets/images/video_bg.png" class="hero__video">
+                        <!-- <source src="assets/videos/video_bg.mp4" type="video/mp4"> -->
+                        Sizin brauzeriniz video teqini dəstəkləmir.
+                    </video>
+
+                    <button class="video-expand-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 3H21V9M9 21H3V15M21 3L14 10M3 21L10 14" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hero__content">
+                    <h1 class="hero__title">Azərbaycanda İstehsal Olunan Beynəlxalq Standartlı Qaz Avadanlıqları
+                    </h1>
+                    <p class="hero__text">Energy Servis olaraq, Azərbaycanın sənaye potensialını gücləndiririk.
+                        İstehsalat
+                        xəttimizdə ən müasir texnologiyalardan istifadə edərək, yerli şəraitə tam uyğunlaşdırılmış
+                        yüksək təzyiqli tənzimləyicilər və ölçü cihazları hazırlayırıq. Bu, həm operativ servis, həm də
+                        sərfəli qiymət deməkdir.</p>
+                    <div class="hero__actions">
+                        <a href="#" class="hero__details-button">
+                            <span class="hero__details-button-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'>
+                                    <path fill="currentColor"
+                                        d="m19.164 12l-6.207-6.207l-1.414 1.414L16.336 12l-4.793 4.793l1.414 1.414zm-5.65 0L7.307 5.793L5.893 7.207L10.686 12l-4.793 4.793l1.414 1.414z" />
+                                </svg>
+                            </span>
+                            <span class="hero__details-button-text">İstehsal sahəmiz</span>
+                        </a>
                     </div>
                 </div>
             </div>

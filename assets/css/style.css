@@ -1,14 +1,13 @@
 :root {
-    --navbar-height: 150px;
+    --navbar-height: 100px;
     --navbar-height-sm: 100px;
 }
 
 body {
-    font-family: "Google Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
-    font-variation-settings:
-        "GRAD" 0;
 }
 
 .header {
@@ -24,23 +23,58 @@ body {
     display: flex;
     align-items: center;
     height: var(--navbar-height);
+    position: relative;
 }
 
 .navbar .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    height: 100%;
+    max-width: 1700px;
 }
 
 .navbar__logo {
-    width: calc(var(--navbar-height) - 10px);
-    height: calc(var(--navbar-height) - 10px);
+    width: calc(var(--navbar-height) * 2);
+    height: calc(var(--navbar-height) * 2);
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+
+    z-index: 100;
+
+    opacity: 0;
+    animation-name: zoomUp;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+
+    transition: box-shadow 0.25s ease, padding 0.25s ease;
 }
 
 .navbar__logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.navbar__logo:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}
+
+.nav__collapse {
+    flex: 1;
 }
 
 .navbar-nav {
@@ -48,7 +82,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
@@ -121,12 +155,88 @@ body {
     transform: rotate(180deg);
 }
 
+.nav__actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 2.5rem;
+}
+
+.nav__collapse,
+.nav__actions {
+    opacity: 0;
+    animation-name: fadeDown;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+}
+
+
+.nav__actions-social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.nav__actions-social-media a {
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #790000;
+    background-color: #f8f8f8;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav__actions-social-media svg {
+    width: 35px;
+    height: 35px;
+}
+
+.nav__actions-social-media a:hover {
+    background-color: #f9f9f9;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.nav__actions-call a {
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #790000;
+    background-color: #f8f8f8;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: box-shadow 0.25s ease, padding 0.25s ease;
+}
+
+.nav__actions-call a:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    padding: 12px 25px;
+}
+
+.nav__actions-call svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+
 @media (max-width: 991.98px) {
     .menu-toggle {
         display: block;
     }
 
-    .nav-collapse {
+    .nav__collapse {
         position: fixed;
         top: 70px;
         left: 0;
@@ -139,7 +249,7 @@ body {
         overflow-y: auto;
     }
 
-    .nav-collapse.open {
+    .nav__collapse.open {
         transform: translateX(0);
     }
 
@@ -182,12 +292,15 @@ body {
 }
 
 .hero__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
     align-items: center;
-    column-gap: 3rem;
-    /* overflow: hidden; */
-    padding: 2rem 0;
+    justify-content: center;
+    column-gap: 5rem;
+    overflow: hidden;
+    padding: 2rem;
+    margin: auto;
+    width: 100%;
+    max-width: 90%;
 }
 
 .hero::before {
@@ -216,7 +329,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, rgba(19, 20, 24, 0.85) 35%, rgba(19, 20, 24, 0.75) 40%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 .hero__bg-image img {
@@ -228,12 +341,21 @@ body {
 .hero__video-wrapper {
     position: relative;
     z-index: 1;
-    width: 600px;
-    min-width: 600px;
-    height: calc(90vh - var(--navbar-height));
-    overflow: hidden;
-    border-radius: 25px;
+    width: 550px;
+    min-width: 550px;
+    height: 620px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+
+    opacity: 0;
+    animation-name: fadeUp;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
 }
 
 .hero__video-wrapper::before {
@@ -243,97 +365,182 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.45) 30%, rgba(192, 24, 49, 0.8));
+    z-index: 3;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2) 30%, rgba(192, 24, 49, 0.6));
 }
 
 .hero__video {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.video-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    filter: blur(10px) brightness(0.6);
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.video-expand-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+    z-index: 5;
+}
+
+.video-expand-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.video-expand-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.hero__video-wrapper:hover .video-expand-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
+    transition-delay: 0s;
 }
 
 .hero__content {
     position: relative;
     z-index: 3;
     color: #fff;
+    /* text-align: right; */
+    max-width: 50%;
+
+    opacity: 0;
+    animation-name: fadeUp;
+    animation-duration: 1.4s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
 }
 
 .hero__title {
     color: #fff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
 }
 
 .hero__text {
     font-size: 1.25rem;
+    font-weight: 400;
     margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    opacity: 0.8;
 }
 
 .hero__details-button {
-    display: inline-block;
-    padding: 0.8rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
     background-color: #fff;
     color: #000;
     text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
     border-radius: 0.5rem;
     border: 2px solid #fff;
     font-weight: 600;
-    transition: background 0.3s ease;
-    opacity: 0.8;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.hero__details-button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transition: max-width 0.4s ease, opacity 0.3s ease, margin-right 0.3s ease;
+}
+
+.hero__details-button-icon svg {
+    width: 35px;
+    height: 35px;
 }
 
 .hero__details-button:hover {
     background-color: transparent;
     border: 2px solid #fff;
     color: #fff;
+    padding-left: 20px;
+}
+
+.hero__details-button:hover .hero__details-button-icon {
+    max-width: 40px;
+    opacity: 1;
+    margin-right: 10px;
 }
 
 
 
-@keyframes flipLeft {
-    from {
-        opacity: 0;
-        transform: perspective(2500px) rotateY(-100deg);
-    }
 
-    to {
-        opacity: 1;
-        transform: perspective(2500px) rotateY(0);
-    }
-}
-
-.flip-left {
-    opacity: 0;
-    backface-visibility: hidden;
-
-    animation-name: flipLeft;
-    animation-duration: 0.8s;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-fill-mode: forwards;
-}
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: perspective(2500px) rotateY(-100deg);
+        transform: translateY(70px);
     }
 
     to {
         opacity: 1;
-        transform: perspective(2500px) rotateY(0);
+        transform: translateY(0);
     }
 }
 
-.fade-up {
-    opacity: 0;
-    backface-visibility: hidden;
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
 
-    animation-name: flipLeft;
-    animation-duration: 0.8s;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-fill-mode: forwards;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
