@@ -114,10 +114,25 @@ const initNavLine = () => {
         UI.animationLine.style.left = `${linkRect.left - parentRect.left}px`;
     };
 
+    const resetLine = () => {
+        const activeLink = document.querySelector('.nav-link.active');
+        if (activeLink) {
+            moveLine(activeLink);
+        } else {
+            UI.animationLine.style.width = '0px';
+        }
+    };
+
     UI.navLinks.forEach(link => {
         link.addEventListener('mouseenter', (e) => {
-            if (!e.target.classList.contains('dropdown-item')) moveLine(e.target);
+            if (!e.target.classList.contains('dropdown-item')) {
+                moveLine(e.target);
+            }
         });
+    });
+
+    UI.navParent.addEventListener('mouseleave', () => {
+        resetLine();
     });
 
     const activeLink = document.querySelector('.nav-link.active');
