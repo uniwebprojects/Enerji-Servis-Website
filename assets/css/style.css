@@ -179,12 +179,15 @@ button.nav-link {
     visibility: hidden;
     display: grid;
     grid-template-rows: 0fr;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
 }
 
 .dropdown-menu__wrapper {
     overflow: hidden;
+    min-height: 0;
+    padding: 0.5rem 0;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -192,7 +195,7 @@ button.nav-link {
 .dropdown.open .dropdown-menu {
     visibility: visible;
     grid-template-rows: 1fr;
-    padding: 0.5rem 0;
+    opacity: 1;
 }
 
 .dropdown-item {
@@ -733,7 +736,7 @@ button.nav-link {
     flex-direction: column;
     background: #fff;
     border: 1px solid #eee;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 400px;
@@ -762,12 +765,9 @@ button.nav-link {
     left: 0;
     width: 100%;
     height: 100%;
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
-    opacity: 0.8;
+    background: linear-gradient(to top, #000, rgba(10, 10, 10, 0));
+    transition: all 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-
 
 .products-main__img {
     width: 100%;
@@ -780,13 +780,22 @@ button.nav-link {
     transform: scale(1.1);
 }
 
+.products-main__item:hover .products-main__image-wrapper::after {
+    transform: translateY(50%);
+}
+
 .products-main__info {
     padding: 20px;
     z-index: 2;
     color: #fff;
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: -80px;
+    left: 10px;
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.products-main__item:hover .products-main__info {
+    transform: translateY(-90px);
 }
 
 .products-main__item-title {
@@ -798,25 +807,30 @@ button.nav-link {
 .products-main__item-text {
     font-size: 1rem;
     font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .products-main__item-link {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 30px;
     color: #fff;
     background-color: transparent;
     text-decoration: none;
     transition: all 0.25s ease;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.2rem;
     padding: 10px 25px;
     border: 1px solid rgb(255, 255, 255);
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 
 .products-main__item-link:hover {
-    backdrop-filter: blur(5px);
+    background-color: #000;
     padding: 10px 35px;
 }
 

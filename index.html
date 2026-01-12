@@ -50,10 +50,13 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <div class="dropdown-menu__wrapper">
-                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a></li>
-                                    <li role="none"><a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a></li>
-                                </div>
+                                <li role="none" style="overflow: hidden;">
+                                    <div class="dropdown-menu__wrapper">
+                                        <a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a>
+                                        <a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a>
+                                        <a href="#" class="dropdown-item" role="menuitem">Məhsul 3</a>
+                                    </div>
+                                </li>
                             </ul>
                         </li>
 
@@ -103,21 +106,24 @@
 
                     <div class="top-changelang dropdown">
                         <button type="button" class="lang-toggle dropdown-toggle" aria-expanded="false"
-                            aria-haspopup="listbox">
-                            <img src="assets/images/icons/az.png" alt="AZ" class="lang-flag">
+                            aria-haspopup="menu">
+                            <img src="assets/images/icons/az.png" alt="" class="lang-flag">
                             <span>AZ</span>
                             <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
                                 <path fill="currentColor"
                                     d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
                             </svg>
                         </button>
-                        <ul class="dropdown-menu lang-menu">
-                            <div class="dropdown-menu__wrapper">
-                                <li><a href="?lang=en" class="dropdown-item"><img src="assets/images/icons/en.png"
-                                            alt="EN" class="lang-flag"> EN</a></li>
-                                <li><a href="?lang=ru" class="dropdown-item"><img src="assets/images/icons/ru.png"
-                                            alt="RU" class="lang-flag"> RU</a></li>
-                            </div>
+
+                        <ul class="dropdown-menu lang-menu" role="menu" aria-label="Dil seçimi">
+                            <li role="none" style="overflow: hidden;">
+                                <div class="dropdown-menu__wrapper">
+                                    <a href="/en" hreflang="en" class="dropdown-item" role="menuitem"><img
+                                            src="assets/images/icons/en.png" alt="" class="lang-flag"> EN</a>
+                                    <a href="/ru" hreflang="ru" class="dropdown-item" role="menuitem"><img
+                                            src="assets/images/icons/ru.png" alt="" class="lang-flag"> RU</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -197,7 +203,9 @@
                         </div>
                         <div class="products-main__info">
                             <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
+                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə. Lorem
+                                ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, nisi! Lorem ipsum dolor
+                                sit, amet consectetur adipisicing elit. Dolores, numquam?</p>
                             <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
                         </div>
                     </a>
