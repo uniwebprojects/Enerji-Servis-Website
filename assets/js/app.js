@@ -50,13 +50,6 @@ const toggleMenu = (state) => {
         document.querySelectorAll('.dropdown').forEach(d => updateDropdown(d, false));
     }
 
-    if (isOpen) {
-        const animation = UI.navToggle?.querySelector('animate');
-        if (animation) {
-            animation.beginElement();
-        }
-    }
-
     updateInert(isOpen);
 };
 
