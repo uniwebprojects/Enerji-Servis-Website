@@ -2,6 +2,7 @@ const UI = {
     navbar: document.querySelector('.navbar'),
     navToggle: document.querySelector('.menu-toggle'),
     navCollapse: document.getElementById('navbarCollapse'),
+    navOverlay: document.querySelector('.nav-overlay'),
     mainContent: document.getElementById('main-content'),
     video: document.querySelector('.hero__video'),
     expandBtn: document.querySelector('.video-expand-btn'),
@@ -16,24 +17,46 @@ const SETTINGS = { breakpoint: 992, active: 'open' };
 
 const updateInert = (open) => {
     const isMobile = window.innerWidth < SETTINGS.breakpoint;
-    if (isMobile && open) {
-        UI.navCollapse?.removeAttribute('inert');
-        UI.mainContent?.setAttribute('inert', '');
-        document.body.style.overflow = 'hidden';
+
+    if (isMobile) {
+        if (open) {
+            UI.navCollapse?.removeAttribute('inert');
+            UI.mainContent?.setAttribute('inert', '');
+            document.body.style.overflow = 'hidden';
+        } else {
+            UI.navCollapse?.setAttribute('inert', '');
+            UI.mainContent?.removeAttribute('inert');
+            document.body.style.overflow = '';
+        }
+
+        UI.navOverlay?.classList.toggle('active', open);
     } else {
-        UI.navCollapse?.setAttribute('inert', '');
+        UI.navCollapse?.removeAttribute('inert');
         UI.mainContent?.removeAttribute('inert');
         document.body.style.overflow = '';
-        if (!isMobile) UI.navCollapse?.removeAttribute('inert');
+        UI.navOverlay?.classList.toggle('active', false);
     }
 };
 
 const toggleMenu = (state) => {
     if (!UI.navCollapse) return;
     const isOpen = typeof state === 'boolean' ? state : !UI.navCollapse.classList.contains(SETTINGS.active);
+
     UI.navCollapse.classList.toggle(SETTINGS.active, isOpen);
     UI.navToggle?.classList.toggle(SETTINGS.active, isOpen);
     UI.navToggle?.setAttribute('aria-expanded', isOpen);
+
+    if (!isOpen) {
+        document.querySelectorAll('.dropdown').forEach(d => updateDropdown(d, false));
+    }
+
+    if (isOpen) {
+        const animation = UI.navToggle?.querySelector('animate');
+        if (animation) {
+            animation.beginElement();
+        }
+    }
+
     updateInert(isOpen);
 };
 
@@ -94,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavLine();
     updateInert(false);
 
-    window.addEventListener('scroll', () => UI.navbar?.classList.toggle('scrolled', window.scrollY > 50));
+    window.addEventListener('scroll', () => UI.navbar?.classList.toggle('scrolled', window.scrollY > 300));
 
     if (UI.expandBtn && UI.video) {
         UI.expandBtn.addEventListener('click', () => {
