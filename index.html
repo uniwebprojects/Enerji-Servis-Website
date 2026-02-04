@@ -14,11 +14,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
         rel="stylesheet">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/splidejs/css/splide.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
+    <script src="assets/splidejs/js/splide.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="assets/js/app.js" defer></script>
 </head>
@@ -59,7 +61,7 @@
                                     </svg>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li role="none" style="overflow: hidden;">
+                                    <li role="none" class="li-none">
                                         <div class="dropdown-menu__wrapper">
                                             <a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a>
                                             <a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a>
@@ -139,87 +141,67 @@
     </header>
 
     <main id="main-content">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit exercitationem a minima, sapiente iste
-            enim temporibus accusantium fugit excepturi perferendis deleniti velit sit rerum inventore! Ullam ex
-            excepturi dicta hic doloremque tenetur doloribus delectus neque ea? Id possimus laborum non assumenda,
-            voluptatum ratione at facere veniam quae aliquam excepturi vero voluptate. Numquam quidem recusandae
-            dolorem! Rerum magnam et praesentium molestias iusto fugiat eligendi maxime nobis dolores eveniet, repellat
-            temporibus quis officia corrupti? Pariatur adipisci eius id dolor minima provident cumque, odit eaque rerum
-            nobis iure ad excepturi sit cum. Libero, repudiandae distinctio ratione odit laudantium recusandae quae
-            commodi laborum? Velit delectus saepe quaerat, aspernatur impedit nesciunt sed dignissimos recusandae!
-            Commodi quidem ad eum doloribus, fugit vitae consequatur obcaecati rerum hic libero? Quod, porro. Nesciunt,
-            similique repellat fugiat vero provident dignissimos velit modi iusto molestias commodi sapiente, cum error
-            blanditiis incidunt placeat possimus ratione molestiae quae laborum vel esse. Nemo eligendi ea dicta magnam
-            excepturi modi libero cum laudantium voluptas repellendus placeat totam sit soluta inventore recusandae,
-            dolor maxime a iusto ducimus, deserunt eius. Voluptatum consequuntur, modi omnis architecto unde fugit
-            voluptas voluptatem expedita necessitatibus eveniet itaque reiciendis sapiente, natus maiores ex quasi
-            commodi harum, veniam pariatur at officiis totam dicta esse perspiciatis? Sapiente explicabo quia
-            consectetur corrupti voluptate assumenda inventore provident nostrum quis recusandae, quaerat officiis
-            eligendi reiciendis architecto magnam sequi nam optio in omnis eum magni delectus blanditiis! Maiores quasi
-            aperiam eaque voluptatem doloribus voluptatum sit dicta deleniti molestiae, nihil rem totam veniam, beatae,
-            corrupti commodi. Modi harum recusandae dolorum iste culpa unde, delectus fuga praesentium vero autem
-            aspernatur distinctio dolorem, labore doloremque sit voluptates tempore consequuntur rem adipisci sequi
-            laudantium totam! Corrupti nostrum placeat unde recusandae dolore adipisci facilis veritatis labore aliquam.
-            Impedit ad autem quia fugit laborum suscipit cumque qui debitis reiciendis necessitatibus atque voluptas
-            numquam, tempora sequi assumenda consequatur maiores nihil recusandae? Amet, est repudiandae provident
-            explicabo doloribus quam mollitia ad quisquam, ab eveniet magnam doloremque a impedit. Ab suscipit facilis
-            minus asperiores recusandae, itaque aliquid voluptatum atque tenetur obcaecati vitae iure error! Qui iste
-            maxime dolorum facere aliquam, praesentium unde officiis distinctio placeat eligendi dolore? Voluptatum fuga
-            cumque ea ducimus quo dolores blanditiis, soluta ullam voluptas, totam quod architecto nisi corrupti id est
-            quisquam exercitationem in nesciunt veniam nulla vel nostrum delectus quae impedit. Accusantium a tempora
-            minus provident architecto velit laborum esse iusto, ad praesentium facilis eum voluptatibus quos, aliquam
-            quidem omnis? Accusamus odit doloremque praesentium ipsa quia, earum dignissimos veritatis voluptas, enim
-            ratione culpa minus beatae nobis nemo consequuntur consequatur? Quasi eveniet asperiores quas ad
-            consequuntur, quo dolorem alias quisquam vitae. Nobis amet nesciunt neque. Cum non ipsa molestiae minima
-            provident deleniti tempora temporibus, quos odio, nemo a eum quis cupiditate corrupti impedit veritatis,
-            delectus facilis architecto neque voluptatibus esse ex ipsam aliquid! Tenetur deserunt sapiente illum
-            repellat rerum quod iusto. Reiciendis consequatur atque enim beatae deleniti! Vitae vel ab quae eos dolore
-            ut provident optio tempore excepturi, quos minus inventore natus est ducimus enim repellat incidunt amet.
-            Repudiandae dolores deserunt tenetur consectetur.</h2>
-        <!-- <section class="hero">
-            <div class="hero__bg-image">
-                <img src="assets/images/hero.webp" alt="">
+        <section class="splide hero__slider" aria-label="Hero Slider">
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 12.013L3.211 12m6.777 7L3 12l6.988-7" />
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 12.013L20.789 12m-6.776 7L21 12l-6.988-7" />
+                    </svg>
+                </button>
             </div>
-            <div class="hero__wrapper">
-                <div class="hero__video-wrapper">
-                    <video class="video-blur" autoplay loop muted playsinline>
-                       <source src="assets/videos/hero_video.mp4" type="video/mp4"> 
-        </video>
 
-        <video autoplay loop muted playsinline poster="assets/images/video_bg.png" class="hero__video">
-            <source src="assets/videos/hero_video.mp4" type="video/mp4"> 
-            Sizin brauzeriniz video teqini dəstəkləmir.
-        </video>
-
-        <button class="video-expand-btn">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 3H21V9M9 21H3V15M21 3L14 10M3 21L10 14" stroke="white" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </button>
-        </div>
-
-        <div class="hero__content">
-            <h1 class="hero__title">Azərbaycanda İstehsal Olunan Beynəlxalq Standartlı Qaz Avadanlıqları
-            </h1>
-            <p class="hero__text">Energy Servis olaraq, Azərbaycanın sənaye potensialını gücləndiririk.
-                İstehsalat
-                xəttimizdə ən müasir texnologiyalardan istifadə edərək, yerli şəraitə tam uyğunlaşdırılmış
-                yüksək təzyiqli tənzimləyicilər və ölçü cihazları hazırlayırıq. Bu, həm operativ servis, həm də
-                sərfəli qiymət deməkdir.</p>
-            <div class="hero__actions">
-                <a href="#" class="hero__details-button">
-                    <span class="hero__details-button-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'>
-                            <path fill="currentColor"
-                                d="m19.164 12l-6.207-6.207l-1.414 1.414L16.336 12l-4.793 4.793l1.414 1.414zm-5.65 0L7.307 5.793L5.893 7.207L10.686 12l-4.793 4.793l1.414 1.414z" />
-                        </svg>
-                    </span>
-                    <span class="hero__details-button-text">İstehsal sahəmiz</span>
-                </a>
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide hero__slide">
+                        <div class="hero__slide-img">
+                            <img src="assets/images/hero.webp" alt="">
+                        </div>
+                        <div class="hero__slide-content">
+                            <h1 class="hero__slide-title">Azərbaycanda istehsal olunan beynəlxalq standartlı qaz
+                                avadanlıqları
+                            </h1>
+                            <p class="hero__slide-text">Energy Servis olaraq, Azərbaycanın sənaye potensialını
+                                gücləndiririk.
+                                İstehsalat
+                                xəttimizdə ən müasir texnologiyalardan istifadə edərək, yerli şəraitə tam
+                                uyğunlaşdırılmış
+                                yüksək təzyiqli tənzimləyicilər və ölçü cihazları hazırlayırıq. Bu, həm operativ servis,
+                                həm
+                                də
+                                sərfəli qiymət deməkdir.</p>
+                            <div class="hero__slide-buttons">
+                                <a href="#" class="hero__slide-button">
+                                    <span class="hero__slide-button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em'
+                                            height='1em'>
+                                            <path fill="currentColor"
+                                                d="m19.164 12l-6.207-6.207l-1.414 1.414L16.336 12l-4.793 4.793l1.414 1.414zm-5.65 0L7.307 5.793L5.893 7.207L10.686 12l-4.793 4.793l1.414 1.414z" />
+                                        </svg>
+                                    </span>
+                                    <span class="hero__slide-button-text">İstehsal sahəmiz</span>
+                                </a>
+                                <a href="#" class="hero__slide-button">
+                                    <span class="hero__slide-button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em'
+                                            height='1em'>
+                                            <path fill="currentColor"
+                                                d="M19.074 4.894A9.93 9.93 0 0 0 12.064 2C6.598 2 2.13 6.437 2.13 11.904c0 1.768.45 3.44 1.318 4.983L2.032 22l5.306-1.35c1.447.771 3.087 1.221 4.759 1.221c5.434-.032 9.87-4.47 9.87-9.967c0-2.637-1.028-5.113-2.893-7.01m-7.042 15.273a8.2 8.2 0 0 1-4.212-1.19l-.322-.192l-3.119.803l.869-3.022l-.193-.322A8.53 8.53 0 0 1 3.8 11.84c0-4.534 3.665-8.2 8.231-8.2c2.187 0 4.245.869 5.788 2.412a8.24 8.24 0 0 1 2.412 5.852c.064 4.599-3.666 8.264-8.2 8.264m4.534-6.173c-.257-.129-1.447-.74-1.736-.772c-.225-.097-.418-.129-.547.129c-.129.257-.643.771-.772.964c-.128.129-.257.193-.546.032c-.258-.128-1.03-.353-1.994-1.254c-.74-.643-1.254-1.447-1.35-1.736c-.129-.257-.033-.354.128-.515c.129-.128.258-.257.354-.45c.129-.128.129-.257.257-.418c.129-.128.032-.321-.032-.45c-.096-.128-.547-1.35-.772-1.865c-.193-.514-.418-.418-.546-.418h-.45c-.13 0-.45.032-.644.322c-.225.257-.868.868-.868 2.09s.868 2.347 1.03 2.572c.128.129 1.768 2.669 4.212 3.762c.578.257 1.028.418 1.414.547c.579.193 1.126.128 1.544.096c.482-.032 1.447-.579 1.672-1.19c.193-.546.193-1.093.128-1.19c-.064-.063-.257-.16-.482-.256" />
+                                        </svg>
+                                    </span>
+                                    <span class="hero__slide-button-text">Qiymət təklifi al</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-        </div>
         </section>
 
 
@@ -245,22 +227,112 @@
                             consectetur
                             facilis natus atque rem distinctio rerum unde ipsa.</p>
                     </div>
-                    <div class="about-main__image">
-                        <img src="assets/images/hero.webp" width="500" height="500" alt="">
+
+                    <div class="about-main__video-wrapper">
+                        <video class="about-main__video" autoplay loop muted playsinline
+                            poster="assets/images/video_bg.png">
+                            <!-- <source src="assets/videos/hero_video.mp4" type="video/mp4"> -->
+                            Sizin brauzeriniz video teqini dəstəkləmir.
+                        </video>
+
+                        <button class="about-main__video-expand-btn" type="button">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 3H21V9M9 21H3V15M21 3L14 10M3 21L10 14" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                        <p class="about-main__video-caption">İstehsalat sahəmizdən video</p>
                     </div>
                 </div>
                 <div class="about-main__advantages">
-                    <div class="about-main__advantages-item">
-                        lorem ipsum
-                    </div>
-                    <div class="about-main__advantages-item">
-                        lorem ipsum
-                    </div>
-                    <div class="about-main__advantages-item">
-                        lorem ipsum
-                    </div>
-                    <div class="about-main__advantages-item">
-                        lorem ipsum
+                    <h2 class="about-main__advantages-title">
+                        Niyə EnergyServis?
+                    </h2>
+                    <div class="about-main__advantages-content">
+                        <div class="about-main__advantages-company">
+                            <img src="assets/images/logo.png" alt="">
+                            <span>Yüzlərlə məmnun müştəri!</span>
+                        </div>
+
+                        <div class="about-main__advantages-grid">
+                            <div class="about-main__advantage-card">
+                                <div class="about-main__advantage-visual">
+                                    <div class="about-main__advantage-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                        </svg>
+                                    </div>
+                                    <span class="about-main__advantage-number">01</span>
+                                </div>
+                                <h3 class="about-main__advantage-title">Beynəlxalq Sertifikatlaşdırma</h3>
+                                <p class="about-main__advantage-text">Məhsullarımız ISO və beynəlxalq sənaye
+                                    standartlarına
+                                    tam uyğundur, təhlükəsizlik zəmanətlidir.</p>
+                            </div>
+
+                            <div class="about-main__advantage-card">
+                                <div class="about-main__advantage-visual">
+                                    <div class="about-main__advantage-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path
+                                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                        </svg>
+                                    </div>
+                                    <span class="about-main__advantage-number">02</span>
+                                </div>
+                                <h3 class="about-main__advantage-title">24/7 Texniki Dəstək</h3>
+                                <p class="about-main__advantage-text">Satış sonrası montaj, tənzimləmə və servis
+                                    xidmətlərimizlə hər zaman yanınızdayıq.</p>
+                            </div>
+
+                            <div class="about-main__advantage-card">
+                                <div class="about-main__advantage-visual">
+                                    <div class="about-main__advantage-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width='1em'
+                                            height='1em'>
+                                            <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M43.912 32.11c-2.57 6.308-13.567 10.227-24.564 8.753c-7.575-1.015-13.49-4.407-15.26-8.752" />
+                                                <path
+                                                    d="M45.5 24c0 6.81-9.626 12.332-21.5 12.332S2.5 30.811 2.5 24h0" />
+                                                <path
+                                                    d="M43.912 15.89c2.569 6.307-4.263 12.615-15.26 14.089c-10.997 1.473-21.994-2.445-24.564-8.753c-.715-1.755-.715-3.581 0-5.337" />
+                                                <path
+                                                    d="M38.975 8.573c4.887 4.743 2.144 10.861-6.126 13.664c-8.27 2.804-18.937 1.23-23.824-3.513c-3.225-3.131-3.225-7.02 0-10.151" />
+                                                <path
+                                                    d="M27.372 2.766c6.726 1.068 10.67 5.062 8.807 8.92s-8.824 6.12-15.55 5.052s-10.67-5.062-8.808-8.92c1.184-2.455 4.528-4.373 8.807-5.052" />
+                                                <path
+                                                    d="M45.5 24c0 11.874-9.626 21.5-21.5 21.5S2.5 35.874 2.5 24S12.126 2.5 24 2.5S45.5 12.126 45.5 24" />
+                                                <path
+                                                    d="M30.539 7.25c0 2.105-2.975 3.811-6.644 3.811s-6.644-1.706-6.644-3.81s2.975-3.812 6.644-3.812s6.644 1.706 6.644 3.811" />
+                                                <path
+                                                    d="M24.36 3.44c.138-.605.272-.928.397-.923h0m-1.724 42.966c-.678-.027-.842-9.668-.366-21.532c.194-4.838.465-9.298.763-12.883m4.176-6.98c1.441-.542 2.818-.615 4.047-.14h0M16.137 44.052c-5.072-1.963-5.712-12.531-1.427-23.606c1.5-3.879 3.407-7.306 5.468-10.037m9.685-4.829c4.169.064 7.904 1.544 10.411 4.492h0M7.516 37.928c-5.663-6.66-2.921-18.295 6.125-25.987a28.5 28.5 0 0 1 4.279-3.023m12.62-1.401c9.383 2.878 15.715 10.734 14.697 19.085M2.553 21.398c.87-7.14 6.869-12.637 14.715-14.419m12.139 2.4a30.6 30.6 0 0 1 5.611 5.162c7.692 9.046 8.948 20.614 2.805 25.838M9.967 7.621c2.262-1.923 5.212-2.719 8.421-2.504m8.421 5.558c1.731 3.084 3.319 6.946 4.521 11.245c3.2 11.435 2.464 21.636-1.643 22.785M18.103 3.295c.892-.25 1.87-.051 2.886.529" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <span class="about-main__advantage-number">03</span>
+                                </div>
+                                <h3 class="about-main__advantage-title">Rəsmi Distribütorluq</h3>
+                                <p class="about-main__advantage-text">Elster, Madas və digər qlobal nəhənglərin rəsmi
+                                    nümayəndəsi olaraq birbaşa tədarük edirik.</p>
+                            </div>
+
+                            <div class="about-main__advantage-card">
+                                <div class="about-main__advantage-visual">
+                                    <div class="about-main__advantage-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                        </svg>
+                                    </div>
+                                    <span class="about-main__advantage-number">04</span>
+                                </div>
+                                <h3 class="about-main__advantage-title">Smart Texnologiyalar</h3>
+                                <p class="about-main__advantage-text">Yeni nəsil Ultrasəs və Smart sayğaclar ilə enerji
+                                    idarəetməsini rəqəmsallaşdırırıq.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,10 +422,83 @@
                     </a>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
 
-    <footer></footer>
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="container">
+                <nav class="footer__top-nav">
+                    <a href="#" class="footer__top-link">Məhsullar</a>
+                    <a href="#" class="footer__top-link">Xidmətlər</a>
+                    <a href="#" class="footer__top-link">Layihələr</a>
+                    <a href="#" class="footer__top-link">Qalereya</a>
+                    <a href="#" class="footer__top-link">Əlaqə</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__grid">
+
+                    <div class="footer__info">
+                        <img src="assets/images/logo.png" alt="Geoid Logo" class="footer__logo">
+                        <h4 class="footer__subtitle">Bizimlə əlaqə</h4>
+                        <ul class="footer__contact-list">
+                            <li><a href="mailto:info@geoid.az">info@energyservis.az</a></li>
+                            <li><a href="tel:+99450">+994 50 280 10 50</a></li>
+                            <li><a href="tel:+99470">+994 70 280 10 51</a></li>
+                            <li><a href="tel:+99412">+994 12 570 00 94</a></li>
+                            <li>Baki şəhəri, Nizami rayonu, Oqtay Vəliyev 72</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content">
+                        <p class="footer__disclaimer">
+                            Saytdakı materialların istifadəsi zamanı istinad edilməsi vacibdir.
+                            Məlumat internet səhifələrində istifadə edildikdə hiperlink vasitəsilə istinad mütləqdir.
+                        </p>
+
+                        <div class="footer__social-section">
+                            <h4 class="footer__subtitle">Bizi sosial şəbəkələrdə izləyin</h4>
+                            <div class="footer__social-flags">
+                                <a href="#" class="social-flag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                        aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-flag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                        aria-hidden="true">
+                                        <path fill="currentColor" fill-rule="evenodd"
+                                            d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m-5 3a5 5 0 1 1 10 0a5 5 0 0 1-10 0"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__copyright">
+            <div class="container">
+                <p>&copy; Copyright 2026. Bütün hüquqlar qorunur</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/..." class="whatsapp-fixed" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em' aria-hidden="true">
+            <path fill="currentColor"
+                d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+        </svg>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {

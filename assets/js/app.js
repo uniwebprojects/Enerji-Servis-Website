@@ -4,37 +4,43 @@ const UI = {
     navCollapse: document.getElementById('navbarCollapse'),
     navOverlay: document.querySelector('.nav-overlay'),
     mainContent: document.getElementById('main-content'),
-    video: document.querySelector('.hero__video'),
-    expandBtn: document.querySelector('.video-expand-btn'),
+    videoWrapper: document.querySelector('.about-main__video-wrapper'),
+    video: document.querySelector('.about-main__video'),
+    expandBtn: document.querySelector('.about-main__video-expand-btn'),
     navLinks: document.querySelectorAll('.nav-link'),
     animationLine: document.querySelector('.nav-line'),
     navParent: document.querySelector('.navbar-nav'),
-    langContainer: document.querySelector('.top-changelang'),
-    langToggle: document.querySelector('.lang-toggle')
 };
 
-const SETTINGS = { breakpoint: 992, active: 'open' };
+const SETTINGS = {
+    query: window.matchMedia("(min-width: 992px)"),
+    active: 'open'
+};
 
 const updateInert = (open) => {
-    const isMobile = window.innerWidth < SETTINGS.breakpoint;
+    const isDesktop = SETTINGS.query.matches;
 
-    if (isMobile) {
-        if (open) {
-            UI.navCollapse?.removeAttribute('inert');
-            UI.mainContent?.setAttribute('inert', '');
-            document.body.style.overflow = 'hidden';
-        } else {
-            UI.navCollapse?.setAttribute('inert', '');
-            UI.mainContent?.removeAttribute('inert');
-            document.body.style.overflow = '';
-        }
-
+    if (!isDesktop) {
+        UI.navCollapse?.toggleAttribute('inert', !open);
+        UI.mainContent?.toggleAttribute('inert', open);
+        document.body.style.overflow = open ? 'hidden' : '';
         UI.navOverlay?.classList.toggle('active', open);
     } else {
-        UI.navCollapse?.removeAttribute('inert');
-        UI.mainContent?.removeAttribute('inert');
+        [UI.navCollapse, UI.mainContent].forEach(el => el?.removeAttribute('inert'));
         document.body.style.overflow = '';
         UI.navOverlay?.classList.toggle('active', false);
+    }
+};
+
+const updateDropdown = (container, state, method = 'none') => {
+    if (!container) return;
+    const toggle = container.querySelector('.dropdown-toggle');
+    container.classList.toggle(SETTINGS.active, state);
+    toggle?.setAttribute('aria-expanded', state);
+    container.dataset.method = state ? method : 'none';
+
+    if (!state) {
+        container.querySelectorAll('.dropdown').forEach(n => updateDropdown(n, false));
     }
 };
 
@@ -47,21 +53,10 @@ const toggleMenu = (state) => {
     UI.navToggle?.setAttribute('aria-expanded', isOpen);
 
     if (!isOpen) {
-        document.querySelectorAll('.dropdown').forEach(d => updateDropdown(d, false));
+        document.querySelectorAll(`.dropdown.${SETTINGS.active}`).forEach(d => updateDropdown(d, false));
     }
 
     updateInert(isOpen);
-};
-
-const updateDropdown = (container, state) => {
-    if (!container) return;
-    const toggle = container.querySelector('.dropdown-toggle');
-    container.classList.toggle(SETTINGS.active, state);
-    toggle?.setAttribute('aria-expanded', state);
-
-    if (!state) {
-        container.querySelectorAll('.dropdown').forEach(n => updateDropdown(n, false));
-    }
 };
 
 const initDropdowns = () => {
@@ -70,55 +65,131 @@ const initDropdowns = () => {
         if (!toggle) return;
 
         toggle.addEventListener('click', (e) => {
-            e.preventDefault();
+            if (SETTINGS.query.matches) e.preventDefault();
             e.stopPropagation();
+
             const isOpen = dropdown.classList.contains(SETTINGS.active);
+            const isManual = dropdown.dataset.method === 'click';
 
-            const parentMenu = dropdown.parentElement.closest('.dropdown-menu');
-            const siblings = parentMenu
-                ? parentMenu.querySelectorAll(':scope > .dropdown')
-                : document.querySelectorAll('.dropdown:not(.dropdown-submenu):not(.dropdown-menu .dropdown)');
-
-            siblings.forEach(s => s !== dropdown && updateDropdown(s, false));
-            updateDropdown(dropdown, !isOpen);
+            if (isOpen && isManual) {
+                updateDropdown(dropdown, false);
+            } else {
+                // Sibling management
+                const parent = dropdown.parentElement.closest('.dropdown-menu') || document;
+                parent.querySelectorAll(`:scope > .dropdown.${SETTINGS.active}, .dropdown.${SETTINGS.active}`).forEach(s => {
+                    if (s !== dropdown) updateDropdown(s, false);
+                });
+                updateDropdown(dropdown, true, 'click');
+            }
         });
 
-        const handleHover = (state) => window.innerWidth >= SETTINGS.breakpoint && updateDropdown(dropdown, state);
-        dropdown.addEventListener('mouseenter', () => handleHover(true));
-        dropdown.addEventListener('mouseleave', () => handleHover(false));
+        dropdown.addEventListener('mouseenter', () => {
+            if (SETTINGS.query.matches && dropdown.dataset.method !== 'click') {
+                updateDropdown(dropdown, true, 'hover');
+            }
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            if (SETTINGS.query.matches && dropdown.dataset.method !== 'click') {
+                updateDropdown(dropdown, false);
+            }
+        });
     });
 };
 
 const initNavLine = () => {
     if (!UI.animationLine || !UI.navParent) return;
+
     const move = (el) => {
-        const r = el.getBoundingClientRect(), p = UI.navParent.getBoundingClientRect();
-        UI.animationLine.style.width = `${r.width}px`;
-        UI.animationLine.style.left = `${r.left - p.left}px`;
+        requestAnimationFrame(() => {
+            const r = el.getBoundingClientRect();
+            const p = UI.navParent.getBoundingClientRect();
+            UI.animationLine.style.width = `${r.width}px`;
+            UI.animationLine.style.left = `${r.left - p.left}px`;
+        });
     };
+
     const reset = () => {
         const active = document.querySelector('.nav-link.active');
-        active ? move(active) : UI.animationLine.style.width = '0px';
+        if (active) move(active);
+        else UI.animationLine.style.width = '0px';
     };
-    UI.navLinks.forEach(l => l.addEventListener('mouseenter', (e) => !e.target.classList.contains('dropdown-item') && move(e.target)));
+
+    UI.navLinks.forEach(l => {
+        l.addEventListener('mouseenter', (e) => {
+            if (!e.target.classList.contains('dropdown-item')) move(e.target);
+        });
+    });
+
     UI.navParent.addEventListener('mouseleave', reset);
+    window.addEventListener('resize', reset, { passive: true });
     reset();
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    initDropdowns();
-    initNavLine();
-    updateInert(false);
-
-    window.addEventListener('scroll', () => UI.navbar?.classList.toggle('scrolled', window.scrollY > 300));
-
+const initVideo = () => {
     if (UI.expandBtn && UI.video) {
         UI.expandBtn.addEventListener('click', () => {
             UI.video.muted = false;
             ['requestFullscreen', 'webkitRequestFullscreen', 'msRequestFullscreen'].some(m => UI.video[m] && (UI.video[m](), true));
+            UI.video.style.objectFit = 'contain';
         });
-        document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) UI.video.muted = true; });
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                UI.video.muted = true;
+                UI.video.style.objectFit = 'cover';
+            }
+        });
     }
+
+    const options = {
+        root: null,
+        rootMargin: '-100px 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                UI.video.currentTime = 0;
+
+                const playPromise = UI.video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                    });
+                }
+            } else {
+                if (!UI.video.paused) {
+                    UI.video.pause();
+                }
+            }
+        });
+    }, options);
+
+    if (UI.videoWrapper) {
+        observer.observe(UI.videoWrapper);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Splide('.hero__slider', {
+        rewind: true,
+        autoplay: false,
+        interval: 5000,
+        speed: 300,
+        pauseOnHover: false,
+        arrows: true,
+        pagination: true,
+    }).mount();
+
+    initDropdowns();
+    initNavLine();
+    updateInert(false);
+    initVideo();
+
+    window.addEventListener('scroll', () => {
+        UI.navbar?.classList.toggle('scrolled', window.scrollY > 300);
+    }, { passive: true });
 
     UI.navToggle?.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -129,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (UI.navCollapse?.classList.contains(SETTINGS.active) && !UI.navCollapse.contains(e.target)) {
             toggleMenu(false);
         }
-        document.querySelectorAll('.dropdown').forEach(d => {
+        document.querySelectorAll(`.dropdown.${SETTINGS.active}`).forEach(d => {
             if (!d.contains(e.target)) updateDropdown(d, false);
         });
     });
@@ -137,12 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             toggleMenu(false);
-            document.querySelectorAll('.dropdown').forEach(d => updateDropdown(d, false));
+            document.querySelectorAll(`.dropdown.${SETTINGS.active}`).forEach(d => updateDropdown(d, false));
         }
     });
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= SETTINGS.breakpoint) toggleMenu(false);
+    SETTINGS.query.addEventListener('change', (e) => {
+        if (e.matches) toggleMenu(false);
         updateInert(UI.navCollapse?.classList.contains(SETTINGS.active));
     });
 });
