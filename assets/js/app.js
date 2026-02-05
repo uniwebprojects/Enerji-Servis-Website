@@ -10,6 +10,7 @@ const UI = {
     navLinks: document.querySelectorAll('.nav-link'),
     animationLine: document.querySelector('.nav-line'),
     navParent: document.querySelector('.navbar-nav'),
+    heroSlider: document.querySelector('.hero__slider'),
 };
 
 const SETTINGS = {
@@ -181,7 +182,7 @@ const initMap = () => {
     Object.entries(locations).forEach(([mapId, mapInfo]) => {
         let myMap = new ymaps.Map(mapId, {
             center: mapInfo[0],
-            zoom: 12,
+            zoom: 13,
             controls: ['zoomControl', 'fullscreenControl'],
         });
 
@@ -211,15 +212,17 @@ const initProducts = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new Splide('.hero__slider', {
-        rewind: true,
-        autoplay: false,
-        interval: 5000,
-        speed: 300,
-        pauseOnHover: false,
-        arrows: true,
-        pagination: true,
-    }).mount();
+    if (UI.heroSlider) {
+        new Splide(UI.heroSlider, {
+            rewind: true,
+            autoplay: false,
+            interval: 5000,
+            speed: 300,
+            pauseOnHover: false,
+            arrows: true,
+            pagination: true,
+        }).mount();
+    }
 
     initDropdowns();
     initNavLine();
