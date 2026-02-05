@@ -171,6 +171,45 @@ const initVideo = () => {
     }
 }
 
+const initMap = () => {
+
+    const locations = {
+        "map": [[40.3988998, 49.918191], "EnergyServis"],
+    };
+
+
+    Object.entries(locations).forEach(([mapId, mapInfo]) => {
+        let myMap = new ymaps.Map(mapId, {
+            center: mapInfo[0],
+            zoom: 12,
+            controls: ['zoomControl', 'fullscreenControl'],
+        });
+
+        if (window.innerWidth <= 1024) {
+            myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('drag');
+        }
+
+        let myPlacemark = new ymaps.Placemark(mapInfo[0], {
+            balloonContent: mapInfo[1],
+            hintContent: 'EnergyServis'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'assets/images/location.png',
+            iconImageSize: [90, 90],
+            iconImageOffset: [-45, -90]
+        });
+
+
+        myMap.geoObjects.add(myPlacemark);
+    })
+
+}
+
+const initProducts = () => {
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     new Splide('.hero__slider', {
         rewind: true,
@@ -186,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavLine();
     updateInert(false);
     initVideo();
+    initProducts();
 
     window.addEventListener('scroll', () => {
         UI.navbar?.classList.toggle('scrolled', window.scrollY > 300);
@@ -216,4 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.matches) toggleMenu(false);
         updateInert(UI.navCollapse?.classList.contains(SETTINGS.active));
     });
+
+    if (typeof ymaps !== "undefined") {
+        ymaps.ready(initMap);
+    }
 });

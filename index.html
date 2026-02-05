@@ -22,6 +22,7 @@
 
     <script src="assets/splidejs/js/splide.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=az_AZ" type="text/javascript" defer></script>
     <script src="assets/js/app.js" defer></script>
 </head>
 
@@ -209,7 +210,7 @@
             <div class="container">
                 <div class="about-main__content">
                     <div class="about-main__text">
-                        <span class="about-main__sub-title">Biz kimik?</span>
+                        <span class="about-main__sub-title">Azərbaycan İstehsalı Qaz Avadanlıqları</span>
                         <h2 class="about-main__title">Haqqımızda</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur reprehenderit molestiae
                             cumque
@@ -251,7 +252,7 @@
                     </h2>
                     <div class="about-main__advantages-content">
                         <div class="about-main__advantages-company">
-                            <img src="assets/images/logo.png" alt="">
+                            <!-- <img src="assets/images/logo.png" alt=""> -->
                             <span>Yüzlərlə məmnun müştəri!</span>
                         </div>
 
@@ -341,89 +342,232 @@
 
         <section class="products-main">
             <div class="container">
-                <div class="products-main__heading">
-                    <span class="products-main__span">Yerli istehsalat</span>
-                    <h2 class="products-main__title">İstehsal etdiyimiz məhsullar</h2>
-                    <p class="products-main__desc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            width='1em' height='1em' aria-hidden="true">
-                            <g>
-                                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                                    <path
-                                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-10 8a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
-                                    <path
-                                        d="M16.696 9.282a1 1 0 0 1 .022 1.414L12.16 15.4a1.4 1.4 0 0 1-2.01 0l-1.867-1.926a1 1 0 0 1 1.436-1.392l1.436 1.481l4.128-4.259a1 1 0 0 1 1.414-.022Z" />
-                                </g>
-                            </g>
-                        </svg> Şirkətimiz qaz avadanlıqlarının (sayğaclar,tənzimləyicilər,alarm
-                        cihazları,flanslar,detektorlar və s) istehsalını, satışını və servisini həyata keçirir.</p>
-                </div>
-                <div class="products-main__items">
-                    <a href="#" class="products-main__item">
-                        <div class="products-main__image-wrapper">
-                            <img src="uploads/sqtm.png" alt="Qaz sayğacı" class="products-main__img">
+                <div class="products-main__grid-layout">
+
+                    <div class="products-main__info-block">
+                        <span class="products-main__tag">MƏHSULLARIMIZ</span>
+                        <h2 class="products-main__title">ENERGY <br><span>SERVİS</span></h2>
+                        <div class="products-main__line"></div>
+                        <p class="products-main__desc">
+                            Mühəndislik dəqiqliyi ilə istehsal olunan qaz avadanlıqları, smart idarəetmə sistemləri və
+                            sənaye həlləri.
+                        </p>
+                        <div class="products-main__stats">
+                            <div class="products-main__stat-item">
+                                <span>Kataloqumuzla tanış olun</span>
+                            </div>
                         </div>
-                        <div class="products-main__info">
-                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə. Lorem
-                                ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, nisi! Lorem ipsum dolor
-                                sit, amet consectetur adipisicing elit. Dolores, numquam?</p>
-                            <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
-                        </div>
-                    </a>
-                    <a href="#" class="products-main__item">
-                        <div class="products-main__image-wrapper">
-                            <img src="uploads/ytt-bars.png" alt="Qaz sayğacı" class="products-main__img">
-                        </div>
-                        <div class="products-main__info">
-                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
-                            <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
-                        </div>
-                    </a>
-                    <a href="#" class="products-main__item">
-                        <div class="products-main__image-wrapper">
-                            <img src="uploads/qf_tipli.png" alt="Qaz sayğacı" class="products-main__img">
-                        </div>
-                        <div class="products-main__info">
-                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
-                            <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
-                        </div>
-                    </a>
-                    <a href="#" class="products-main__item">
-                        <div class="products-main__image-wrapper">
-                            <img src="uploads/konus_tipli.png" alt="Qaz sayğacı" class="products-main__img">
-                        </div>
-                        <div class="products-main__info">
-                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
-                            <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
-                        </div>
-                    </a>
-                    <a href="#" class="products-main__item">
-                        <div class="products-main__image-wrapper">
-                            <img src="uploads/konus_tipli.png" alt="Qaz sayğacı" class="products-main__img">
-                        </div>
-                        <div class="products-main__info">
-                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
-                            <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
-                        </div>
-                    </a>
-                    <a href="#" class="products-main__item">
-                        <div class="products-main__image-wrapper">
-                            <img src="uploads/konus_tipli.png" alt="Qaz sayğacı" class="products-main__img">
-                        </div>
-                        <div class="products-main__info">
-                            <h3 class="products-main__item-title">Qaz sayğacı G4</h3>
-                            <p class="products-main__item-text">Yüksək dəqiqlikli ölçmə və uzunömürlü istifadə.</p>
-                            <button href="#" class="products-main__item-link"><span>Daha ətraflı</span></button>
-                        </div>
-                    </a>
+                    </div>
+
+                    <div class="products-main__categories">
+
+                        <a href="#" class="cat-box">
+                            <div class="cat-box__bg"></div>
+                            <div class="cat-box__top">
+                                <span class="cat-box__code">SEC-001</span>
+                            </div>
+                            <div class="cat-box__visual">
+                                <img src="uploads/sqtm.png" alt="Qaz Sayğacları">
+                            </div>
+                            <div class="cat-box__footer">
+                                <h3 class="cat-box__title">Qaz Sayğacları</h3>
+                                <div class="cat-box__arrow">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
                 </div>
             </div>
         </section>
+
+
+        <section class="blog-main">
+            <div class="container">
+                <div class="blog-main__header">
+                    <h2 class="blog-main__title">Faydalı məlumatlar</h2>
+                    <a href="/blog" class="blog-main__all-link">
+                        Hamısına bax
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="blog-main__grid">
+
+                    <article class="blog-card blog-card--large">
+                        <div class="blog-card__image">
+                            <img src="assets/images/hero.webp" alt="Qaz sayğacları">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <time class="blog-card__date">15 Yanvar, 2026</time>
+                            </div>
+                            <h3 class="blog-card__title">Qaz sayğaclarının düzgün quraşdırılması və texniki
+                                təhlükəsizlik qaydaları</h3>
+                            <a href="/blog-detail" class="blog-card__link">
+                                Daha ətraflı
+                            </a>
+                        </div>
+                    </article>
+
+                    <div class="blog-main__sidebar">
+
+                        <article class="blog-card blog-card--small">
+                            <div class="blog-card__image">
+                                <img src="assets/images/hero.webp" alt="Smart sayğaclar">
+                            </div>
+                            <div class="blog-card__content">
+                                <time class="blog-card__date">12 Yanvar, 2026</time>
+                                <h3 class="blog-card__title">Smart sayğacların sənayedə tətbiqi və üstünlükləri</h3>
+                                <a href="/blog-detail" class="blog-card__link">Oxu</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card blog-card--small">
+                            <div class="blog-card__image">
+                                <img src="assets/images/hero.webp" alt="Ultrasəs texnologiyası">
+                            </div>
+                            <div class="blog-card__content">
+                                <time class="blog-card__date">10 Yanvar, 2026</time>
+                                <h3 class="blog-card__title">Ultrasəs qaz sayğacları ilə enerji itkilərini minimuma
+                                    endirin</h3>
+                                <a href="/blog-detail" class="blog-card__link">Oxu</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card blog-card--small">
+                            <div class="blog-card__image">
+                                <img src="assets/images/hero.webp" alt="Servis xidməti">
+                            </div>
+                            <div class="blog-card__content">
+                                <time class="blog-card__date">08 Yanvar, 2026</time>
+                                <h3 class="blog-card__title">Qaz tənzimləyicilərinin periyodik texniki servisinin
+                                    əhəmiyyəti</h3>
+                                <a href="/blog-detail" class="blog-card__link">Oxu</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <div class="partners__wrapper">
+
+                    <div class="partners__content">
+                        <h2 class="partners__title">Qlobal tərəfdaşlıq və distribütorluq</h2>
+                        <p class="partners__text">
+                            Dünyanın aparıcı enerji və sənaye avadanlıqları istehsalçıları ilə qurduğumuz rəsmi
+                            əməkdaşlıq sayəsində müştərilərimizə ən müasir texnologiyaları və orijinal ehtiyat
+                            hissələrini təqdim edirik.
+                        </p>
+                        <div class="partners__info">
+                            <div class="partners__info-item">
+                                <span class="partners__number">10+</span>
+                                <span class="partners__info-label">Dünya brendi</span>
+                            </div>
+                            <div class="partners__info-item">
+                                <span class="partners__number">100%</span>
+                                <span class="partners__info-label">Orijinal məhsul</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partners__logos">
+                        <div class="partner-logo">
+                            <img src="uploads/partners/common.jpg" alt="Partner">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="uploads/partners/elgas.jpg" alt="Partner">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="uploads/partners/rmg.webp" alt="Partner">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="uploads/partners/elgas.jpg" alt="Partner">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <div class="cta-section__content">
+                        <h2 class="cta-section__title">Suallarınız var?</h2>
+                        <p class="cta-section__text">
+                            Əlaqə məlumatlarınızı və sizi maraqlandıran suallarınızı qeyd edin, mütəxəssislərimiz
+                            qısa zaman ərzində sizinlə əlaqə saxlasın.
+                        </p>
+                        <div class="cta-section__features">
+                            <div class="cta-section__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Pulsuz texniki məsləhət</span>
+                            </div>
+                            <div class="cta-section__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Operativ xidmət</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-section__form-wrapper">
+                        <form id="ajax-contact-form" class="cta-form">
+                            <div class="cta-form__group">
+                                <input type="text" name="name" class="cta-form__input" placeholder="Adınız və Soyadınız"
+                                    required>
+                            </div>
+                            <div class="cta-form__grid">
+                                <div class="cta-form__group">
+                                    <input type="tel" name="phone" class="cta-form__input" placeholder="Əlaqə nömrəsi"
+                                        required>
+                                </div>
+                                <div class="cta-form__group">
+                                    <input type="email" name="email" class="cta-form__input" placeholder="E-poçt ünvanı"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="cta-form__group">
+                                <textarea name="message" class="cta-form__textarea"
+                                    placeholder="Mesajınız və ya layihə haqqında qısa məlumat" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-form__submit">
+                                <span class="cta-form__submit-text">Müraciət et</span>
+                                <svg class="cta-form__submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                            <div id="form-response" class="cta-form__response"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map">
+            <div id="map" class="location-card__map"></div>
+        </section>
+
     </main>
+
 
     <footer class="footer">
         <div class="footer__top">
@@ -455,11 +599,6 @@
                     </div>
 
                     <div class="footer__content">
-                        <p class="footer__disclaimer">
-                            Saytdakı materialların istifadəsi zamanı istinad edilməsi vacibdir.
-                            Məlumat internet səhifələrində istifadə edildikdə hiperlink vasitəsilə istinad mütləqdir.
-                        </p>
-
                         <div class="footer__social-section">
                             <h4 class="footer__subtitle">Bizi sosial şəbəkələrdə izləyin</h4>
                             <div class="footer__social-flags">
@@ -480,6 +619,17 @@
                                 </a>
                             </div>
                         </div>
+
+                        <p class="footer__disclaimer">
+                            Saytdakı materialların istifadəsi zamanı istinad edilməsi vacibdir.
+                            Məlumat internet səhifələrində istifadə edildikdə hiperlink vasitəsilə istinad mütləqdir.
+                        </p>
+
+                        <p class="footer__disclaimer siteby">
+                            Vebsaytın hazırlanması <span>—</span> <a href="https://uniweb.az" class="uniweb-logo">
+                                <img src="assets/images/uniweb-logo.png" alt="Uniweb - saytlarin hazirlanmasi">
+                            </a>
+                        </p>
                     </div>
 
                 </div>
