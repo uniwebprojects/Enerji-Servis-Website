@@ -186,11 +186,6 @@ const initMap = () => {
             controls: ['zoomControl', 'fullscreenControl'],
         });
 
-        if (window.innerWidth <= 1024) {
-            myMap.behaviors.disable('scrollZoom');
-            myMap.behaviors.disable('drag');
-        }
-
         let myPlacemark = new ymaps.Placemark(mapInfo[0], {
             balloonContent: mapInfo[1],
             hintContent: 'EnergyServis'
@@ -223,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: true,
         }).mount();
     }
+
+    AOS.init();
 
     initDropdowns();
     initNavLine();

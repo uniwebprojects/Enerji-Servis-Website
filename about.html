@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="assets/splidejs/css/splide.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+
     <script src="assets/splidejs/js/splide.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=az_AZ" type="text/javascript" defer></script>
@@ -160,11 +162,11 @@
                 <div class="container">
                     <div class="about-content__top-grid">
                         <div class="about-content__left">
-                            <div class="about-content__badge">Made in Azerbaijan</div>
-                            <h2 class="about-content__main-title">EnergyServis: Texnoloji mükəmməllik mərkəzi</h2>
+                            <div class="about-content__badge">YERLİ İSTEHSAL</div>
+                            <h2 class="about-content__main-title">EnergyServis</h2>
                             <p class="about-content__lead">
-                                Biz sadəcə cihaz satmırıq. Biz Azərbaycanda qaz və enerji idarəetmə sistemlərinin
-                                gələcəyini inşa edirik.
+                                Xidmətlərimizdən yararlanmaqla siz enerji itkilərinin minimuma endirilməsinə,
+                                avadanlıqların səmərəli işlənməsinə və ən dəyərlisi vaxtınıza qənaət etmiş olarsınız.
                             </p>
                         </div>
                         <div class="about-content__right">
@@ -180,11 +182,11 @@
 
                     <div class="about-content__visual">
                         <div class="about-content__img-box">
-                            <img src="assets/images/factory-inner.jpg" alt="Production Line">
-                            <div class="about-content__experience-tag">
-                                <span>Fəaliyyət</span>
-                                <strong>15 İL+</strong>
-                            </div>
+                            <img src="assets/images/logo.png" alt="">
+                        </div>
+                        <div class="about-content__experience-tag">
+                            <span>Fəaliyyət</span>
+                            <strong>15 İL+</strong>
                         </div>
                         <div class="about-content__features-list">
                             <div class="feature-line">
@@ -224,6 +226,28 @@
                             <h3 class="mv-card__title">Vizyonumuz</h3>
                             <p class="mv-card__desc">Regionun ən böyük enerji avadanlıqları istehsalçısı və mühəndislik
                                 mərkəzi olmaq.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-certificates">
+                        <h2 class="certificates-title">Lisenziya və Sertifikatlarımız</h2>
+                        <div class="pswp-gallery" id="certificates">
+                            <a href="uploads/certificates/lisenziya.jpeg" class="pswp-gallery-item" target="_blank">
+                                <img src="uploads/certificates/lisenziya.jpeg" alt="Sertifikat" />
+                                <div class="pswp-gallery-overlay"></div>
+                            </a>
+                            <a href="uploads/certificates/lisenziya.jpeg" class="pswp-gallery-item" target="_blank">
+                                <img src="uploads/certificates/lisenziya.jpeg" alt="Sertifikat" />
+                                <div class="pswp-gallery-overlay"></div>
+                            </a>
+                            <a href="uploads/certificates/lisenziya.jpeg" class="pswp-gallery-item" target="_blank">
+                                <img src="uploads/certificates/lisenziya.jpeg" alt="Sertifikat" />
+                                <div class="pswp-gallery-overlay"></div>
+                            </a>
+                            <a href="uploads/certificates/lisenziya.jpeg" class="pswp-gallery-item" target="_blank">
+                                <img src="uploads/certificates/lisenziya.jpeg" alt="Sertifikat" />
+                                <div class="pswp-gallery-overlay"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -303,6 +327,8 @@
 
                     <div class="cta-section__form-wrapper">
                         <form id="ajax-contact-form" class="cta-form">
+
+                            <div id="form-response" class="cta-form__response success"></div>
                             <div class="cta-form__group">
                                 <input type="text" name="name" class="cta-form__input" placeholder="Adınız və Soyadınız"
                                     required>
@@ -329,7 +355,6 @@
                                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                 </svg>
                             </button>
-                            <div id="form-response" class="cta-form__response"></div>
                         </form>
                     </div>
                 </div>
@@ -424,10 +449,41 @@
         </svg>
     </a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init();
-        })
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#certificates',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js')
+        });
+
+        lightbox.addFilter('domItemData', (itemData, element, linkEl) => {
+            const img = linkEl.querySelector('img');
+            if (img && !itemData.width) {
+                itemData.width = img.naturalWidth || 0;
+                itemData.height = img.naturalHeight || 0;
+            }
+            return itemData;
+        });
+
+        lightbox.on('gettingData', (event) => {
+            const { data } = event;
+            if (data.width && data.height) return;
+
+            const img = new Image();
+            img.src = data.src;
+            img.onload = () => {
+                data.width = img.width;
+                data.height = img.height;
+
+                if (lightbox.pswp) {
+                    lightbox.pswp.refreshSlideContent(event.index);
+                }
+            };
+        });
+
+        lightbox.init();
     </script>
 </body>
 
