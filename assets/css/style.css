@@ -282,7 +282,7 @@ button.nav-link {
 .nav__actions-social-media a {
     text-decoration: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -310,7 +310,7 @@ button.nav-link {
 .nav__actions-call a {
     text-decoration: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 12px 20px;
     display: flex;
     align-items: center;
@@ -1991,6 +1991,7 @@ button.nav-link {
 
 .categories__text span {
     color: #790000;
+    margin-right: 10px;
 }
 
 .categories__grid {
@@ -2164,18 +2165,17 @@ button.nav-link {
 
 .product-card__button {
     width: 100%;
-    background: #2563eb;
+    background: #790000;
     color: #fff;
     border: none;
     padding: 12px;
-    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
     transition: background 0.2s;
 }
 
 .product-card__button:hover {
-    background: #1d4ed8;
+    background: #202020;
 }
 
 .product-card .splide__track {
@@ -2191,12 +2191,19 @@ button.nav-link {
     overflow: hidden;
 }
 
-.splide__arrow {
+.product-card .splide__arrow {
     background: rgba(255, 255, 255, 0.9) !important;
 }
 
-.pswp-will-open .product-card__img {
-    opacity: 0;
+
+
+.contact {
+    padding: 50px 0;
+}
+
+.contact__text {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 
@@ -2348,12 +2355,12 @@ button.nav-link {
 .whatsapp-fixed {
     position: fixed;
     bottom: 40px;
-    right: 40px;
+    right: 0;
     background-color: #25d366;
     color: white;
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 10px 0 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
