@@ -287,7 +287,7 @@ button.nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #790000;
+    color: #a00101;
     background-color: #FFFAFA;
     transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -856,7 +856,7 @@ button.nav-link {
     font-weight: 700;
     padding: 10px 0;
     text-transform: uppercase;
-    background-color: #790000;
+    background-color: #A20B0B;
     color: #fff;
     padding: 15px 30px;
 }
@@ -919,13 +919,13 @@ button.nav-link {
 .about-main__advantage-card:hover {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
     background-color: #fff;
-    border-color: #790000;
+    border-color: #A20B0B;
 }
 
 .about-main__advantage-icon {
     width: 70px;
     height: 100%;
-    background: #790000;
+    background: #A20B0B;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -945,7 +945,7 @@ button.nav-link {
 .about-main__advantage-title {
     font-size: 20px;
     font-weight: 600;
-    color: #790000;
+    color: #A20B0B;
     margin-bottom: 12px;
     line-height: 1.3;
 }
@@ -1100,7 +1100,7 @@ button.nav-link {
 }
 
 .products-main__tag {
-    color: #790000;
+    color: #A20B0B;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 12px;
@@ -1126,7 +1126,7 @@ button.nav-link {
 .products-main__line {
     width: 60px;
     height: 2px;
-    background: #790000;
+    background: #A20B0B;
     margin-bottom: 30px;
 }
 
@@ -1198,8 +1198,8 @@ button.nav-link {
 }
 
 .cat-box:hover {
-    background: #790000;
-    border-color: #790000;
+    background: #A20B0B;
+    border-color: #A20B0B;
 }
 
 .cat-box:hover .cat-box__title {
@@ -1212,7 +1212,7 @@ button.nav-link {
 
 .cat-box:hover .cat-box__arrow {
     background: #fff;
-    color: #790000;
+    color: #A20B0B;
     border-color: #fff;
 }
 
@@ -1483,7 +1483,7 @@ button.nav-link {
 .partners__number {
     font-size: 28px;
     font-weight: 800;
-    color: #e74c3c;
+    color: #ac1100;
 }
 
 .partners__info-label {
@@ -1724,6 +1724,10 @@ button.nav-link {
         font-size: 30px;
     }
 
+    .cta-section__text {
+        font-size: 1.1rem;
+    }
+
     .cta-form {
         padding: 12px;
     }
@@ -1740,7 +1744,7 @@ button.nav-link {
 
 
 .inner-hero {
-    background-color: #790000;
+    background-color: #a00101;
     padding: 100px 0 60px;
 }
 
@@ -1789,7 +1793,7 @@ button.nav-link {
 }
 
 .about-content__badge {
-    color: #790000;
+    color: #A20B0B;
     font-weight: 800;
     font-size: 14px;
     text-transform: uppercase;
@@ -1810,7 +1814,7 @@ button.nav-link {
     color: #475569;
     line-height: 1.6;
     font-style: italic;
-    border-left: 4px solid #790000;
+    border-left: 4px solid #A20B0B;
     padding-left: 20px;
 }
 
@@ -1840,7 +1844,7 @@ button.nav-link {
 }
 
 .about-content__experience-tag {
-    background: #790000;
+    background: #A20B0B;
     color: #fff;
     padding: 30px;
     display: flex;
@@ -1862,7 +1866,7 @@ button.nav-link {
 .feature-line__num {
     font-size: 24px;
     font-weight: 800;
-    color: #790000;
+    color: #A20B0B;
 }
 
 .feature-line h4 {
@@ -1903,7 +1907,7 @@ button.nav-link {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 800;
-    color: #790000;
+    color: #A20B0B;
     margin-bottom: 15px;
     display: block;
 }
@@ -1990,7 +1994,7 @@ button.nav-link {
 }
 
 .categories__text span {
-    color: #790000;
+    color: #A20B0B;
     margin-right: 10px;
 }
 
@@ -2055,8 +2059,8 @@ button.nav-link {
 }
 
 .category:hover {
-    background: #790000;
-    border-color: #790000;
+    background: #A20B0B;
+    border-color: #A20B0B;
 }
 
 .category:hover .category__title {
@@ -2069,7 +2073,7 @@ button.nav-link {
 
 .category:hover .category__arrow {
     background: #fff;
-    color: #790000;
+    color: #A20B0B;
     border-color: #fff;
 }
 
@@ -2078,19 +2082,14 @@ button.nav-link {
     opacity: 1;
 }
 
-@media (max-width: 1100px) {
-    .products-main__grid-layout {
-        grid-template-columns: 1fr;
+
+@media (max-width: 991.98px) {
+    .categories__text {
+        font-size: 1.1rem;
     }
 
-    .products-main__info-block {
-        max-width: 600px;
-    }
-}
-
-@media (min-width: 992px) {
-    .products-main .container {
-        max-width: 80%;
+    .category {
+        height: 250px;
     }
 }
 
@@ -2134,7 +2133,7 @@ button.nav-link {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #790000;
+    background: #A20B0B;
     color: #fff;
     padding: 5px 12px;
     font-size: 1rem;
@@ -2165,7 +2164,7 @@ button.nav-link {
 
 .product-card__button {
     width: 100%;
-    background: #790000;
+    background: #A20B0B;
     color: #fff;
     border: none;
     padding: 12px;
@@ -2204,6 +2203,94 @@ button.nav-link {
 .contact__text {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin-top: 40px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid rgba(160, 1, 1, 0.1);
+    padding: 0 20px;
+    transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.contact-item__icon {
+    padding: 20px;
+    background-color: #a00101;
+}
+
+.contact-item__icon svg {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+}
+
+.contact-item__heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-item__elements {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-item__elements a {
+    color: #4e4e4e;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.contact-item__elements a:hover {
+    color: #000;
+}
+
+.contact-item:hover {
+    border-color: rgba(160, 1, 1, 1);
+    border-right: 1px solid rgba(160, 1, 1, 1);
+}
+
+
+
+@media (min-width: 992px) {
+    .contact-item:not(:last-child) {
+        border-right: 1px solid transparent;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contact__text {
+        font-size: 1.1rem;
+    }
+
+    .contact__grid {
+        gap: 1rem;
+    }
+
+    .contact-item {
+        gap: 1rem;
+    }
+
+    .contact-item__icon {
+        padding: 10px;
+    }
+
+    .contact-item__icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-item__elements a {
+        font-size: 1rem;
+    }
 }
 
 
@@ -2373,13 +2460,33 @@ button.nav-link {
     height: 45px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
+    .footer__main {
+        padding: 20px 0;
+    }
+
+    .footer__logo {
+        max-width: 100px;
+    }
+
     .footer__grid {
         grid-template-columns: 1fr;
     }
 
     .footer__top-nav {
         gap: 15px;
+    }
+
+    .footer__top-link {
+        font-size: 1.1rem;
+    }
+
+    .footer__content {
+        gap: 1rem;
+    }
+
+    .footer__disclaimer {
+        font-size: 0.8rem;
     }
 }
 
