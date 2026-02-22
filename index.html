@@ -52,24 +52,28 @@
                             <li class="nav-item"><a href="#" class="nav-link">Haqqımızda</a></li>
 
                             <li class="nav-item dropdown">
-                                <button type="button" class="nav-link dropdown-toggle" aria-expanded="false"
-                                    aria-haspopup="menu">
+                                <button type="button" class="nav-link dropdown__toggle" aria-expanded="false"
+                                    aria-haspopup="true" aria-controls="products-menu" id="products-menu-button">
                                     Məhsullar
-                                    <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                    <svg class="dropdown__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
                                         width='1em' height='1em' aria-hidden="true">
                                         <path fill="currentColor"
                                             d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
                                     </svg>
                                 </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li role="none" class="li-none">
-                                        <div class="dropdown-menu__wrapper">
-                                            <a href="#" class="dropdown-item" role="menuitem">Məhsul 1</a>
-                                            <a href="#" class="dropdown-item" role="menuitem">Məhsul 2</a>
-                                            <a href="#" class="dropdown-item" role="menuitem">Məhsul 3</a>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <div class="dropdown__wrapper">
+                                    <div class="dropdown__inner">
+                                        <ul class="dropdown__menu" id="products-menu"
+                                            aria-labelledby="products-menu-button">
+                                            <li><a href="#" class="dropdown__item">Məhsul
+                                                    1</a></li>
+                                            <li><a href="#" class="dropdown__item">Məhsul
+                                                    2</a></li>
+                                            <li><a href="#" class="dropdown__item">Məhsul
+                                                    3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </li>
 
                             <li class="nav-item"><a href="#" class="nav-link">Xidmətlər</a></li>
@@ -113,26 +117,31 @@
                         </div>
 
                         <div class="top-changelang dropdown">
-                            <button type="button" class="lang-toggle dropdown-toggle" aria-expanded="false"
-                                aria-haspopup="menu">
+                            <button type="button" class="lang-toggle dropdown__toggle" aria-expanded="false"
+                                aria-haspopup="true" aria-controls="lang-menu" aria-label="Dil seç" id="
+                                lang-menu-button">
                                 <img src="assets/images/icons/az.png" alt="" class="lang-flag">
                                 <span>AZ</span>
-                                <svg class="dropdown-icon" viewBox="0 0 16 16" width="12" height="12">
+                                <svg class="dropdown__icon" viewBox="0 0 16 16" width="12" height="12">
                                     <path fill="currentColor"
                                         d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
                                 </svg>
                             </button>
 
-                            <ul class="dropdown-menu lang-menu" role="menu" aria-label="Dil seçimi">
-                                <li role="none" style="overflow: hidden;">
-                                    <div class="dropdown-menu__wrapper">
-                                        <a href="/en" hreflang="en" class="dropdown-item" role="menuitem"><img
-                                                src="assets/images/icons/en.png" alt="" class="lang-flag"> EN</a>
-                                        <a href="/ru" hreflang="ru" class="dropdown-item" role="menuitem"><img
-                                                src="assets/images/icons/ru.png" alt="" class="lang-flag"> RU</a>
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="dropdown__wrapper lang-menu">
+                                <div class="dropdown__inner">
+                                    <ul class="dropdown__menu" id="lang-menu" aria-labelledby="lang-menu-button">
+                                        <li>
+                                            <a href="/en" hreflang="en" class="dropdown__item"><img
+                                                    src="assets/images/icons/en.png" alt="" class="lang-flag"> EN</a>
+                                        </li>
+                                        <li>
+                                            <a href="/ru" hreflang="ru" class="dropdown__item"><img
+                                                    src="assets/images/icons/ru.png" alt="" class="lang-flag"> RU</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,6 +149,7 @@
             </div>
         </nav>
     </header>
+
 
     <main id="main-content">
         <section class="splide hero__slider" aria-label="Hero Slider">
@@ -212,27 +222,16 @@
                     <div class="about-main__text">
                         <span class="about-main__sub-title">Azərbaycan İstehsalı Qaz Avadanlıqları</span>
                         <h2 class="about-main__title">Haqqımızda</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur reprehenderit molestiae
-                            cumque
-                            quam explicabo similique voluptas, cum illo modi quae magni soluta laboriosam pariatur esse
-                            neque
-                            libero! Velit corrupti quia est nam quasi ipsum illo laudantium officia fugit numquam.
-                            Praesentium
-                            provident quos nobis vel ab? Alias ab ut amet voluptatibus similique enim exercitationem
-                            tempora
-                            magnam, quas soluta recusandae cupiditate error nemo facilis officiis minima doloribus
-                            suscipit
-                            labore totam laboriosam odio delectus dolorum veritatis. Dignissimos iusto maiores possimus
-                            aliquid
-                            et nam totam quasi blanditiis commodi autem, earum id adipisci. Neque qui incidunt
-                            consectetur
-                            facilis natus atque rem distinctio rerum unde ipsa.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, placeat? Fugit expedita quasi
+                            inventore sed esse modi quibusdam fuga veritatis hic ipsa. Voluptate quod optio quia
+                            laudantium a animi, corrupti facilis inventore sapiente illo rem sint impedit enim? Suscipit
+                            voluptate illum natus harum, dolore explicabo inventore quia magni nihil quibusdam.</p>
                     </div>
 
                     <div class="about-main__video-wrapper">
                         <video class="about-main__video" autoplay loop muted playsinline
                             poster="assets/images/video_bg.png">
-                            <source src="assets/videos/hero_video.mp4" type="video/mp4">
+                            <!-- <source src="assets/videos/hero_video.mp4" type="video/mp4"> -->
                             Sizin brauzeriniz video teqini dəstəkləmir.
                         </video>
 

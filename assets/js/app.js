@@ -35,7 +35,7 @@ const updateInert = (open) => {
 
 const updateDropdown = (container, state, method = 'none') => {
     if (!container) return;
-    const toggle = container.querySelector('.dropdown-toggle');
+    const toggle = container.querySelector('.dropdown__toggle');
     container.classList.toggle(SETTINGS.active, state);
     toggle?.setAttribute('aria-expanded', state);
     container.dataset.method = state ? method : 'none';
@@ -62,7 +62,7 @@ const toggleMenu = (state) => {
 
 const initDropdowns = () => {
     document.querySelectorAll('.dropdown').forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const toggle = dropdown.querySelector('.dropdown__toggle');
         if (!toggle) return;
 
         toggle.addEventListener('click', (e) => {
@@ -76,7 +76,7 @@ const initDropdowns = () => {
                 updateDropdown(dropdown, false);
             } else {
                 // Sibling management
-                const parent = dropdown.parentElement.closest('.dropdown-menu') || document;
+                const parent = dropdown.parentElement.closest('.dropdown__menu') || document;
                 parent.querySelectorAll(`:scope > .dropdown.${SETTINGS.active}, .dropdown.${SETTINGS.active}`).forEach(s => {
                     if (s !== dropdown) updateDropdown(s, false);
                 });
@@ -118,7 +118,7 @@ const initNavLine = () => {
 
     UI.navLinks.forEach(l => {
         l.addEventListener('mouseenter', (e) => {
-            if (!e.target.classList.contains('dropdown-item')) move(e.target);
+            if (!e.target.classList.contains('dropdown__item')) move(e.target);
         });
     });
 
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateInert(UI.navCollapse?.classList.contains(SETTINGS.active));
     });
 
-    if (typeof ymaps !== "undefined") {
-        ymaps.ready(initMap);
-    }
+    // if (typeof ymaps !== "undefined") {
+    //     ymaps.ready(initMap);
+    // }
 });
