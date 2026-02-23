@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preload" href="assets/css/init.css" as="style" crossorigin>
+    <link rel="preload" href="assets/css/style.css" as="style" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/init.css" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/splidejs/css/splide.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">
+
+    <script src="assets/splidejs/js/splide.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=az_AZ" type="text/javascript" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-overlay"></div>
+        <nav class="navbar" aria-label="Əsas naviqasiya">
+            <div class="container">
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="navbarCollapse"
+                    aria-label="Menyunu aç/bağla">
+
+                    <span class="menu-toggle__icon" aria-hidden="true">
+                        <span class="icon-line-menu icon-line-half icon-line-start"></span>
+                        <span class="icon-line-menu"></span>
+                        <span class="icon-line-menu icon-line-half icon-line-end"></span>
+                    </span>
+                </button>
+
+                <a href="/" class="navbar__logo" aria-label="Ana səhifə">
+                    <img src="assets/images/logo.png" alt="Enerji Servis Logo">
+                </a>
+
+                <div class="nav__collapse" id="navbarCollapse">
+                    <div class="nav-links">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#" class="nav-link">Ana Səhifə</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Haqqımızda</a></li>
+
+                            <li class="nav-item dropdown">
+                                <button type="button" class="nav-link dropdown__toggle" aria-expanded="false"
+                                    aria-haspopup="true" aria-controls="products-menu" id="products-menu-button">
+                                    Məhsullar
+                                    <svg class="dropdown__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                        width='1em' height='1em' aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
+                                    </svg>
+                                </button>
+                                <div class="dropdown__wrapper">
+                                    <div class="dropdown__inner">
+                                        <ul class="dropdown__menu" id="products-menu"
+                                            aria-labelledby="products-menu-button">
+                                            <li><a href="#" class="dropdown__item">Məhsul
+                                                    1</a></li>
+                                            <li><a href="#" class="dropdown__item">Məhsul
+                                                    2</a></li>
+                                            <li><a href="#" class="dropdown__item">Məhsul
+                                                    3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item"><a href="#" class="nav-link">Xidmətlər</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link active">Əlaqə</a></li>
+                        </ul>
+                        <div class="nav-line"></div>
+                    </div>
+
+                    <div class="nav__actions">
+                        <div class="nav__actions-social-media">
+                            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"
+                                aria-label="WhatsApp keçid">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                    aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                aria-label="Instagram keçid">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                    aria-hidden="true">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m-5 3a5 5 0 1 1 10 0a5 5 0 0 1-10 0"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="nav__actions-call">
+                            <a href="tel:+994501234567" aria-label="Zəng et">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                    aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999" />
+                                    <path fill="currentColor"
+                                        d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5zm3.422 5.443a1 1 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66c-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a1 1 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391z" />
+                                </svg>
+                                <span>+994 50 123 45 67</span>
+                            </a>
+                        </div>
+
+                        <div class="top-changelang dropdown">
+                            <button type="button" class="lang-toggle dropdown__toggle" aria-expanded="false"
+                                aria-haspopup="true" aria-controls="lang-menu" aria-label="Dil seç" id="
+                                lang-menu-button">
+                                <img src="assets/images/icons/az.png" alt="" class="lang-flag">
+                                <span>AZ</span>
+                                <svg class="dropdown__icon" viewBox="0 0 16 16" width="12" height="12">
+                                    <path fill="currentColor"
+                                        d="M8 10.18L2.39 4.52l-.89.87l5.59 5.71a1.18 1.18 0 0 0 .86.39a1.13 1.13 0 0 0 .85-.39l5.7-5.7l-.88-.89z" />
+                                </svg>
+                            </button>
+
+                            <div class="dropdown__wrapper lang-menu">
+                                <div class="dropdown__inner">
+                                    <ul class="dropdown__menu" id="lang-menu" aria-labelledby="lang-menu-button">
+                                        <li>
+                                            <a href="/en" hreflang="en" class="dropdown__item"><img
+                                                    src="assets/images/icons/en.png" alt="" class="lang-flag"> EN</a>
+                                        </li>
+                                        <li>
+                                            <a href="/ru" hreflang="ru" class="dropdown__item"><img
+                                                    src="assets/images/icons/ru.png" alt="" class="lang-flag"> RU</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="inner-hero">
+            <div class="container">
+                <div class="inner-hero__box">
+                    <h1 class="inner-hero__title">Bloq 1</h1>
+                    <nav class="inner-hero__nav">
+                        <a href="index.html">Ana Səhifə</a>
+                        <span>/</span>
+                        <span class="active">Bloq 1</span>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <article class="post-single">
+            <div class="container">
+                <div class="post-single__image-wrapper">
+                    <img src="assets/images/hero.webp" alt="Sənaye Tipli Qaz Tənzimləyicisi" class="post-single__img">
+                </div>
+
+                <div class="post-single__content">
+                    <div class="post-single__meta">
+                        <time datetime="2026-02-23">23 Fevral, 2026</time>
+                    </div>
+
+                    <div class="post-single__typography">
+                        <p>Sənaye tipli qaz tənzimləyiciləri yüksək təzyiqli qaz xətlərində təhlükəsizliyi təmin edən ən
+                            vacib elementlərdən biridir. Bu cihazlar sistemdəki təzyiqi sabit saxlayaraq avadanlıqların
+                            sıradan çıxmasının qarşısını alır.</p>
+
+                        <h2>Əsas üstünlükləri</h2>
+                        <ul>
+                            <li>Yüksək dəqiqliklə təzyiq tənzimlənməsi</li>
+                            <li>Korroziyaya davamlı materiallar</li>
+                            <li>Uzunmüddətli istismar müddəti</li>
+                        </ul>
+
+                        <p>Müasir tənzimləyicilər həmçinin rəqəmsal monitorinq sistemlərinə qoşula bilir, bu da uzaqdan
+                            nəzarəti mümkün edir.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <section class="partners">
+            <div class="container">
+                <div class="partners__wrapper">
+
+                    <div class="partners__content">
+                        <h2 class="partners__title">Qlobal tərəfdaşlıq və distribütorluq</h2>
+                        <p class="partners__text">
+                            Dünyanın aparıcı enerji və sənaye avadanlıqları istehsalçıları ilə qurduğumuz rəsmi
+                            əməkdaşlıq sayəsində müştərilərimizə ən müasir texnologiyaları və orijinal ehtiyat
+                            hissələrini təqdim edirik.
+                        </p>
+                        <div class="partners__info">
+                            <div class="partners__info-item">
+                                <span class="partners__number">10+</span>
+                                <span class="partners__info-label">Dünya brendi</span>
+                            </div>
+                            <div class="partners__info-item">
+                                <span class="partners__number">100+</span>
+                                <span class="partners__info-label">Məhsul çeşidi</span>
+                            </div>
+                            <div class="partners__info-item">
+                                <span class="partners__number">100%</span>
+                                <span class="partners__info-label">Keyfiyyətə zəmanət</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partners__logos">
+                        <div class="partner-logo">
+                            <img src="uploads/partners/common.png" alt="Partner">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="uploads/partners/elgas.png" alt="Partner">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="uploads/partners/rmg.webp" alt="Partner">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="uploads/partners/rmg.webp" alt="Partner">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <div class="cta-section__content">
+                        <h2 class="cta-section__title">Suallarınız var?</h2>
+                        <p class="cta-section__text">
+                            Əlaqə məlumatlarınızı və sizi maraqlandıran suallarınızı qeyd edin, mütəxəssislərimiz
+                            qısa zaman ərzində sizinlə əlaqə saxlasın.
+                        </p>
+                        <div class="cta-section__features">
+                            <div class="cta-section__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Pulsuz texniki məsləhət</span>
+                            </div>
+                            <div class="cta-section__feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Operativ xidmət</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-section__form-wrapper">
+                        <form id="ajax-contact-form" class="cta-form">
+
+                            <div id="form-response" class="cta-form__response success"></div>
+                            <div class="cta-form__group">
+                                <input type="text" name="name" class="cta-form__input" placeholder="Adınız və Soyadınız"
+                                    required>
+                            </div>
+                            <div class="cta-form__grid">
+                                <div class="cta-form__group">
+                                    <input type="tel" name="phone" class="cta-form__input" placeholder="Əlaqə nömrəsi"
+                                        required>
+                                </div>
+                                <div class="cta-form__group">
+                                    <input type="email" name="email" class="cta-form__input" placeholder="E-poçt ünvanı"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="cta-form__group">
+                                <textarea name="message" class="cta-form__textarea"
+                                    placeholder="Mesajınız və ya layihə haqqında qısa məlumat" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-form__submit">
+                                <span class="cta-form__submit-text">Müraciət et</span>
+                                <svg class="cta-form__submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map">
+            <div id="map" class="location-card__map"></div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="container">
+                <nav class="footer__top-nav">
+                    <a href="#" class="footer__top-link">Məhsullar</a>
+                    <a href="#" class="footer__top-link">Xidmətlər</a>
+                    <a href="#" class="footer__top-link">Layihələr</a>
+                    <a href="#" class="footer__top-link">Qalereya</a>
+                    <a href="#" class="footer__top-link">Əlaqə</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__grid">
+
+                    <div class="footer__info">
+                        <img src="assets/images/logo.png" alt="Geoid Logo" class="footer__logo">
+                        <h4 class="footer__subtitle">Bizimlə əlaqə</h4>
+                        <ul class="footer__contact-list">
+                            <li><a href="mailto:info@geoid.az">info@energyservis.az</a></li>
+                            <li><a href="tel:+99450">+994 50 280 10 50</a></li>
+                            <li><a href="tel:+99470">+994 70 280 10 51</a></li>
+                            <li><a href="tel:+99412">+994 12 570 00 94</a></li>
+                            <li>Baki şəhəri, Nizami rayonu, Oqtay Vəliyev 72</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content">
+                        <div class="footer__social-section">
+                            <h4 class="footer__subtitle">Bizi sosial şəbəkələrdə izləyin</h4>
+                            <div class="footer__social-flags">
+                                <a href="#" class="social-flag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                        aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-flag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em'
+                                        aria-hidden="true">
+                                        <path fill="currentColor" fill-rule="evenodd"
+                                            d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m-5 3a5 5 0 1 1 10 0a5 5 0 0 1-10 0"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="footer__disclaimer">
+                            Saytdakı materialların istifadəsi zamanı istinad edilməsi vacibdir.
+                            Məlumat internet səhifələrində istifadə edildikdə hiperlink vasitəsilə istinad mütləqdir.
+                        </p>
+
+                        <p class="footer__disclaimer siteby">
+                            Saytın hazırlanması <span>—</span> <a href="https://uniweb.az" class="uniweb-logo">
+                                <img src="assets/images/uniweb-logo.png" alt="Uniweb - saytlarin hazirlanmasi">
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__copyright">
+            <div class="container">
+                <p>&copy; Copyright 2026. Bütün hüquqlar qorunur</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/..." class="whatsapp-fixed" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='1em' height='1em' aria-hidden="true">
+            <path fill="currentColor"
+                d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+        </svg>
+    </a>
+
+    <script type="module">
+        import Splide from 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/+esm';
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '.pswp-gallery',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+
+            showHideAnimationType: 'fade',
+            showAnimationDuration: 300,
+            hideAnimationDuration: 300,
+            zoomAnimationDuration: false
+        });
+
+        lightbox.addFilter('domItemData', (itemData, element, linkEl) => {
+            const img = linkEl.querySelector('img');
+            if (img && !itemData.width) {
+                itemData.width = img.naturalWidth || 0;
+                itemData.height = img.naturalHeight || 0;
+            }
+            return itemData;
+        });
+
+        lightbox.on('gettingData', (event) => {
+            const { data } = event;
+            if (data.width && data.height) return;
+
+            const img = new Image();
+            img.src = data.src;
+            img.onload = () => {
+                data.width = img.width;
+                data.height = img.height;
+                if (lightbox.pswp) {
+                    lightbox.pswp.refreshSlideContent(event.index);
+                }
+            };
+        });
+
+        lightbox.init();
+
+        const sliders = document.querySelectorAll('.product-card__visual.splide');
+
+        sliders.forEach((el) => {
+            const splideInstance = new Splide(el, {
+                type: 'slide',
+                rewind: true,
+                arrows: true,
+                pagination: false,
+                drag: true,
+                dragAngleThreshold: 30
+            }).mount();
+
+            const links = el.querySelectorAll('.pswp-gallery a');
+
+            links.forEach((link, index) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!splideInstance.state.is(3)) {
+                        lightbox.loadAndOpen(index, {
+                            gallery: el.querySelector('.pswp-gallery')
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
